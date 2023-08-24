@@ -1,27 +1,14 @@
-<h1 aling="center">Eae👋</h1>
+<hr>
 
-![Static Badge](https://img.shields.io/badge/:badgeContent?logo=python)
+## <p aling="center">Eae👋</p>
 
+<a href="https://github.com/gui-tupinamba">
+    <img height="180em" src="https://github-readme-stats.vercel.app/api?username=gui-tupinamba&show_icons=true&theme=dark&include_all_commits=true&count_private=true"/>
 
-<!--
-**kbr1to/kbr1to** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+<hr>
 
-Here are some ideas to get you started:
-
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
-<div>
-  <a href="https://github.com/gui-tupinamba">
-  <img height="180em" src="https://github-readme-stats.vercel.app/api?username=gui-tupinamba&show_icons=true&theme=dark&include_all_commits=true&count_private=true"/>
-</div>
-<div style="display: inline_block"><br>
-  <img align="center" alt="gui-tupinamba-HTML" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg">
-  <img align="center" alt="gui-tupinamba-CSS" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg">
+### 📚EM DESENVOLVIMENTO:
+<div style="display: in-line block">
+    <img alt="python" src="https://img.shields.io/badge/python-passing?style=for-the-badge&logo=python&logoColor=white&labelColor=%233776AB&color=%233776AB">
+    
 </div>
