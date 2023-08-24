@@ -1,6 +1,6 @@
 <hr>
 
-## <p aling="center">Eae👋</p>
+## <p align="center">Eae👋</p>
 
 <a href="https://github.com/gui-tupinamba">
     <img height="180em" src="https://github-readme-stats.vercel.app/api?username=gui-tupinamba&show_icons=true&theme=dark&include_all_commits=true&count_private=true"/>
