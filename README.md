@@ -1,5 +1,8 @@
 <h1 aling="center">Eae👋</h1>
 
+![Static Badge](https://img.shields.io/badge/:badgeContent?logo=python)
+
+
 <!--
 **kbr1to/kbr1to** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
