@@ -5,7 +5,7 @@
 
 - 🔰  Eu sou de Boa Vista - RR, Brasil
 - ⚡ Gosto de jogos, tecnologia e amo escutar músicas e praticar esporte
-- 🧠 Atualmente sou estudande de Engenharia de Software na Faculdade Descomplica
+- 🧠 Atualmente sou estudande de Engenharia de Software
 - 🏦 Atualmente estou desempregado e a procura de um estágio na área de TI
 ##
 
