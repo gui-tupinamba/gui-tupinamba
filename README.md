@@ -28,27 +28,17 @@
 
 ##
 
-#### Experiência Profissional:
-Na visão geral abaixo você encontrará minha experiência de trabalho mais recente:
-
-[<img align="left" height="94px" width="94px" alt="Warpnet" src="https://i.postimg.cc/QMhRjxt3/Icone-UP-3.png"/>](https://www.uzzipay.com/)
-**Strategy and Innovation Analyst** \
-[**UzziPay**](https://www.uzzipay.com/) • Full-time \
-Competências: `Desenvolvimento Estratégico`, `Análise de Viabilidade`, `Eficiência operacional`, 
-<br/> `Análise e Integridade de dados`, `Inovação empresarial`, `Pesquisa de mercado`
-
-##
-
 #### Formação Acadêmica:
 Na visão geral abaixo você encontrará minha formação acadêmica:
 
-[<img align="left" height="94px" width="94px" alt="Warpnet" src="https://i.postimg.cc/5t8v5X6F/Cubos-Academy.png"/>](https://cubos.academy/)
-**Software Developer** \
-[**Cubos Academy**](https://cubos.academy/) \
-Linguagens & Tecnologias - Front-end: `HTML`, `CSS`, `DOM`, `JavaScript`, `React.js`, `TypeScript`
-<br/>Linguagens & Tecnologias - Back-end: `JavaScript`, `Node.js`, `APIs Rest`, `SQL`, `PostgreSQL`
+[<img align="left" height="94px" width="94px" alt="Warpnet" src="https://i.postimg.cc/zXP8CV7V/descomplica.png"/>](https://descomplica.com.br/)
+**Software Engineering** \
+[**Descomplica Faculdade Digital**](https://descomplica.com.br/) \
+Competências em andamento...
+<br>
+<br>
 
-Por favor, encontre-me no [LinkedIn](https://www.linkedin.com/in/israelltulio/) para uma descrição mais detalhada da minha experiência de trabalho, educação e certificação.
+Por favor, encontre-me no [LinkedIn](https://www.linkedin.com/in/gui-tupinamba/) para uma descrição mais detalhada da minha experiência de trabalho, educação e certificação.
 
 ##
 
