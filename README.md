@@ -42,8 +42,8 @@ Por favor, encontre-me no [LinkedIn](https://www.linkedin.com/in/gui-tupinamba/)
 ##
 
 #### Estatísticas:
+[![wakatime](https://wakatime.com/badge/user/d6bdff9a-ed61-407e-b854-781dee577802.svg)](https://wakatime.com/@d6bdff9a-ed61-407e-b854-781dee577802)
+
 [<img height="180px" alt="GitHub Statistics" src="https://github-readme-stats.vercel.app/api/top-langs/?username=gui-tupinamba&layout=compact&langs_count=7&theme=shadow_green"/>](https://github.com/)
 [<img height="180px" alt="GitHub Statistics" src="https://github-readme-stats.vercel.app/api/?username=gui-tupinamba&show_icons=true&include_all_commits=true&theme=shadow_green"/>](https://github.com/)
 [<img height="153px" alt="GitHub Statistics" src="http://github-readme-streak-stats.herokuapp.com/?user=gui-tupinamba&amp;theme=shadow_green"/>](https://github.com/)
-
-[![Harlok's WakaTime stats](https://github-readme-stats.vercel.app/api/wakatime?username=gui_tupinamba)](https://github.com/anuraghazra/github-readme-stats)
