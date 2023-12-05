@@ -30,7 +30,7 @@
 #### Formação Acadêmica:
 Na visão geral abaixo você encontrará minha formação acadêmica:
 
-[<img align="left" height="94px" width="94px" alt="Warpnet" src="https://i.postimg.cc/zXP8CV7V/descomplica.png"/>](<target="blank_" src="https://descomplica.com.br"/>)
+[<img align="left" height="94px" width="94px" alt="Warpnet" src="https://i.postimg.cc/zXP8CV7V/descomplica.png"/>](https://descomplica.com.br)
 **Software Engineering** \
 [**Descomplica Faculdade Digital**](https://descomplica.com.br/) \
 Competências em andamento...
