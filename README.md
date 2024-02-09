@@ -14,7 +14,6 @@
 [<img height="48px" width="48px" alt="Icone CSS" src="https://skillicons.dev/icons?i=css"/>](https://developer.mozilla.org/pt-BR/docs/Web/CSS)
 [<img height="48px" width="48px" alt="Icone Java Script" src="https://skillicons.dev/icons?i=js"/>](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript)
 [<img height="48px" width="48px" alt="Icone PHP" src="https://skillicons.dev/icons?i=php"/>](https://developer.mozilla.org/pt-BR/docs/Glossary/PHP)
-[<img height="48px" width="48px" alt="Icone Java Script" src="https://skillicons.dev/icons?i=python"/>](https://developer.mozilla.org/pt-BR/docs/Glossary/Python)
 
 ##
 
