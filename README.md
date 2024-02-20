@@ -24,7 +24,7 @@
 
 #### Entre em contato comigo:
 [<img alt="Linkedin" src="https://img.shields.io/badge/-linkedin-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white"/>](https://www.linkedin.com/in/gui-tupinamba)
-[<img alt="Email do Gmail" src="https://img.shields.io/badge/email-FFFFFF?style=for-the-badge&logo=gmail"/>](mailto:contatoguitupinamba@gmail.com)
+[<img alt="Email do Gmail" src="https://img.shields.io/badge/email-FFFFFF?style=for-the-badge&logo=gmail"/>](mailto:guitupinamba.dev@gmail.com)
 
 ##
 
