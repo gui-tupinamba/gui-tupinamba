@@ -31,9 +31,9 @@
 #### Formação Acadêmica:
 Na visão geral abaixo você encontrará minha formação acadêmica:
 
-[<img align="left" height="94px" width="94px" alt="Warpnet" src="https://i.postimg.cc/zXP8CV7V/descomplica.png"/>](https://descomplica.com.br)
+[<img align="left" height="94px" width="94px" alt="Warpnet" src="https://logodownload.org/wp-content/uploads/2021/02/unicesumar-logo-0.png"/>](https://www.unicesumar.edu.br/)
 **Software Engineering** \
-[**Descomplica Faculdade Digital**](https://descomplica.com.br/) \
+[**UniCesumar**](https://www.unicesumar.edu.br/) \
 Competências em andamento...
 <br>
 <br>
