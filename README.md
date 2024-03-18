@@ -1,7 +1,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
 
 ## Hello, everyone!! 👋
-### Oi, meu nome é Guilherme, bem-vindo ao meu perfil do GitHub. <img src="desenvolvimento-web.png" alt="Ilustração" min-width="200px" max-width="200px" width="200px" align="right">
+### Oi, meu nome é Guilherme, bem-vindo ao meu perfil do GitHub. <img src="./src/assets/desenvolvimento-web.png" alt="Ilustração" min-width="200px" max-width="200px" width="200px" align="right">
 
 - 🔰  Eu sou de Boa Vista - RR, Brasil
 - ⚡ Gosto de jogos, tecnologia e amo escutar músicas e praticar esporte
