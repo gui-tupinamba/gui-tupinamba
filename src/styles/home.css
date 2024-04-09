@@ -1,0 +1,32 @@
+.section-home{
+    height: 100vh;
+    padding: 0 5em;
+    margin-top: 70px;
+    
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    gap: 50px;
+}
+
+.section-home-titulo {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.section-home-titulo__titulo {
+    font-size: 64px;
+}
+
+.section-home-titulo__texto {
+    font-size: 24px;
+}
+
+.section-home-titulo-img__img {
+    border: solid 1px var(--cor-laranja);
+    border-radius: 100px;
+    width: 350px;
+}

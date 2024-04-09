@@ -1,0 +1,31 @@
+@import url(./src/styles/cabecalho.css);
+@import url(./src/styles/home.css);
+@import url(./src/styles/about.css);
+@import url(./src/styles/portfolio.css);
+
+:root {
+    --cor-preto: #272121;
+    --cor-preto-claro: #363333;
+    --cor-laranja: #E16428;
+    --cor-branco: #F6E9E9;
+    --font-principal: "Inter";
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--cor-preto);
+    color: var(--cor-branco);
+    font-family: var(--font-principal);
+}
+
+.destaque {
+    color: var(--cor-laranja);
+}
