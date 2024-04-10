@@ -23,3 +23,13 @@
 .rodape-guitupinamba-logo{
     width: 5%;
 }
+
+@media screen and (max-width: 768px) {
+    .rodape-guitupinamba-logo{
+        width: 50px;
+    }
+
+    .rodape-guitupinamba-link{
+        font-size: small;
+    }
+}

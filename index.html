@@ -16,11 +16,18 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="style.css">
+    
     <script src="script.js"></script>
 
+    <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    
+    <link rel="stylesheet" href="style.css">
+
     <script src="https://kit.fontawesome.com/b09e94b79c.js" crossorigin="anonymous"></script>
+
 </head>
 <body>
 
@@ -33,7 +40,7 @@
         <nav>
             <ul class="cabecalho-lista">
                 <li class="cabecalho-lista__link"><a class="cabecalho-lista__button" href="#home">Home</a></li>
-                <li class="cabecalho-lista__link"><a class="cabecalho-lista__button" href="#about">About me</a></li>
+                <li class="cabecalho-lista__link"><a class="cabecalho-lista__button" href="#about">About</a></li>
                 <li class="cabecalho-lista__link"><a class="cabecalho-lista__button" href="#portfolio">Portfolio</a></li>
             </ul>
         </nav>
@@ -41,12 +48,14 @@
     
     <!--Home-->
     <section id="home" class="section-home">
-        <div class="section-home-titulo">
-            <h1 class="section-home-titulo__titulo">Guilherme <span class="destaque">Tupinambá</span></h1>
-            <p class="section-home-titulo__texto">Seja muito bem vindo ao meu site, aqui você não encontra a perfeição, mas o <span class="destaque">esforço</span> e a <span class="destaque">vontade</span> de entregar o que tenho de melhor.</p>
-        </div>
-        <div class="section-home-img">
-            <img class="section-home-titulo-img__img" src="src/assets/logo-gui-tupinamba.png" alt="">
+        <div class="section-home__div">
+            <div class="section-home-titulo">
+                <h1 class="section-home-titulo__titulo">Guilherme <span class="destaque">Tupinambá</span></h1>
+                <p class="section-home-titulo__texto">Seja muito bem vindo ao meu site, aqui você não encontra a perfeição, mas o <span class="destaque">esforço</span> e a <span class="destaque">vontade</span> de entregar o que tenho de melhor.</p>
+            </div>
+            <div class="section-home-img">
+                <img class="section-home-titulo-img__img" src="src/assets/logo-gui-tupinamba.png" alt="">
+            </div>
         </div>
     </section>
     
@@ -78,7 +87,7 @@
                 </li>
             </ul>
         </div>
-        <div class="section-about-titulo">
+        <div class="section-about-titulo desaparecer-mobile">
             <h1 class="section-about-titulo__titulo">Sobre mim</h1>
             <p class="section-about-titulo__texto">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusantium ducimus expedita corporis veniam delectus, magnam aspernatur, iure quaerat corrupti, eaque necessitatibus iusto! Qui veritatis iure quisquam quasi commodi, blanditiis ab!</p>
         </div>
@@ -86,10 +95,12 @@
 
     <!--Portfolio-->
     <section id="portfolio" class="section-portfolio">
+
         <div class="section-portfolio-info">
             <h1 class="section-portfolio-title">Projetos</h1>
             <p class="section-portfolio-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, possimus laborum itaque molestiae amet necessitatibus dolores incidunt. Quae, sapiente illo, magnam facilis culpa nesciunt vero mollitia error, aut nulla necessitatibus!</p>
         </div>
+
         <div class="section-portfolio__cards">
             <div class="section-portfolio__card">
                 <div class="section-portfolio__card-infor-project">
@@ -116,6 +127,7 @@
                 <a href="" class="section-portfolio__card-button">Mais</a>
             </div>
         </div>
+
     </section>
 
     <!--Footer-->

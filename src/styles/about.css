@@ -1,6 +1,6 @@
 .section-about {
     background-color: var(--cor-laranja);
-    height: 100vh;
+    height: 100%;
     padding: 0 5em;
 
     color: var(--cor-preto);
@@ -55,4 +55,22 @@
     font-size: 24px;
 }
 
+@media screen and (max-width: 768px){
+    .section-about{
+        flex-direction: column;
+        padding: 2em 2em;
+        margin: 2em 0;
+    }
 
+    .section-about-img__img{
+        width: 50vw;
+    }
+
+    .section-about-titulo__titulo {
+        font-size: 3em;
+    }
+    
+    .section-about-titulo__texto {
+        font-size: 1.5em;
+    }
+}

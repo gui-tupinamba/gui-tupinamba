@@ -22,6 +22,10 @@
     width: 50px;
 }
 
+.cabecalho-titulo__titulo{
+    display: block;
+}
+
 .cabecalho-titulo__titulo-link {
     text-decoration: none;
     color: var(--cor-branco);
@@ -44,4 +48,32 @@
 
 .cabecalho-lista__button:hover{
     background-color: var(--cor-laranja);
+}
+
+@media screen and (max-width: 768px){
+    .cabecalho {
+        height: 55px;
+        padding: 0 0;
+        align-items: center;
+    }
+    
+    .cabecalho-lista {
+        flex-direction: row;
+    }
+    
+    .cabecalho-lista__button{
+        width: 50%;
+        margin: 1em 0;
+        padding: 0.5em 1em;
+        font-size: 1em;
+    }
+
+    .cabecalho-titulo__titulo{
+        display: none;
+    }
+
+    .container__imagem {
+        padding: 1em;
+    }
+
 }
