@@ -2,6 +2,7 @@
 @import url(./src/styles/home.css);
 @import url(./src/styles/about.css);
 @import url(./src/styles/portfolio.css);
+@import url(./src/styles/rodape.css);
 
 :root {
     --cor-preto: #272121;
@@ -14,6 +15,8 @@
 * {
     margin: 0;
     padding: 0;
+    scrollbar-width: thin;
+    scrollbar-color: var(--cor-laranja) var(--cor-preto-claro);
 }
 
 html {
@@ -28,4 +31,18 @@ body {
 
 .destaque {
     color: var(--cor-laranja);
+}
+
+*::-webkit-scrollbar {
+    width: 5px;
+}
+
+*::-webkit-scrollbar-track {
+    background: var(--cor-branco);
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: var(--cor-preto-claro);
+    border-radius: 100px;
+    border: 3px solid var(--cor-branco);
 }

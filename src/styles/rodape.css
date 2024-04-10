@@ -1,0 +1,25 @@
+.rodape{
+    background-color: var(--cor-preto-claro);
+    height: 100%;
+    padding: 1em;
+}
+
+.rodape-guitupinamba{
+    display: flex;
+    flex-direction: row;
+    gap: 1px;
+}
+
+.rodape-guitupinamba-link{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+    
+    text-decoration: none;
+    color: var(--cor-branco);
+}
+
+.rodape-guitupinamba-logo{
+    width: 5%;
+}

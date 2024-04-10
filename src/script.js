@@ -1,0 +1,1 @@
+alert("Olá, este site ainda está em desenvolvimento, algumas funções podem vir a não funcionar. Acesse o código em: https://github.com/gui-tupinamba/gui-tupinamba.")
