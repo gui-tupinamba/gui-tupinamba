@@ -92,11 +92,12 @@
     box-shadow: none;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
 
     .section-portfolio{
         margin: 2em 0;
         padding: 0 2em;
+        height: 100%;
     }
 
     .section-portfolio-info{
