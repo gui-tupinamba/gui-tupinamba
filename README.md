@@ -5,7 +5,6 @@
 
 - 🔰  I'm from Boa Vista - RR, Brasil
 - ⚡ I like games, tecnology and I love listenig to music and playing sports
-- 🎓 I am currently a Software Engineering student
 - 💼 I am currently unemployed and looking for an internship in the IT field
 - 🌐 Acess my website on https://gui-tupinamba.com
 ##
