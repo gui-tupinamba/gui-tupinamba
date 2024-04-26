@@ -31,9 +31,9 @@
 #### Academic education:
 In the overview below you will find my academic background:
 
-[<img align="left" height="94px" width="94px" alt="Warpnet" src="https://logodownload.org/wp-content/uploads/2021/02/unicesumar-logo-0.png"/>](https://www.unicesumar.edu.br/)
+[<img align="left" height="94px" width="94px" alt="Warpnet" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRN9t96-2IgmmDcSuYsp8k8iebiPelF64d7Gw&usqp=CAU.png"/>](https://www.unicesumar.edu.br/)
 **High School** \
-[**Escola Estadual Deodoro da Fonseca**](https://www.unicesumar.edu.br/) \
+[**Escola Estadual Deodoro da Fonseca**]() \
 Skills in progress...
 <br>
 <br>
