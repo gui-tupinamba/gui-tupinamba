@@ -33,8 +33,8 @@
 In the overview below you will find my academic background:
 
 [<img align="left" height="94px" width="94px" alt="Warpnet" src="https://logodownload.org/wp-content/uploads/2021/02/unicesumar-logo-0.png"/>](https://www.unicesumar.edu.br/)
-**Software Engineering** \
-[**UniCesumar**](https://www.unicesumar.edu.br/) \
+**High School** \
+[**Escola Estadual Deodoro da Fonseca**](https://www.unicesumar.edu.br/) \
 Skills in progress...
 <br>
 <br>
