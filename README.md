@@ -33,7 +33,7 @@ In the overview below you will find my academic background:
 
 [<img align="left" height="94px" width="94px" alt="Warpnet" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRN9t96-2IgmmDcSuYsp8k8iebiPelF64d7Gw&usqp=CAU.png"/>](https://www.unicesumar.edu.br/)
 **High School** \
-[**Escola Estadual Deodoro da Fonseca**]() \
+[**Escola Estadual Deodoro da Fonseca**](https://www.instagram.com/ee.deodorodafonseca?igsh=MXUzZXNianJsNnNvZg==) \
 Completed in 2022.
 <br>
 <br>
