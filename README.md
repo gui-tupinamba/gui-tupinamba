@@ -3,9 +3,10 @@
 ## Hello, everyone!! 👋
 ### Hi, my name is Guilherme, welcome to my GitHub profile. <img src="./src/assets/desenvolvimento-web.png" alt="Ilustração" min-width="200px" max-width="200px" width="200px" align="right">
 
-- 🔰  I'm from Boa Vista - RR, Brasil
+- 🔰 I'm from Boa Vista - RR, Brasil
 - ⚡ I like games, tecnology and I love listenig to music and playing sports
-- 💼 I am currently unemployed and looking for an internship in the IT field
+- 💼 I'm currently unemployed and looking for an internship in the IT field
+- 🎓 Software Engineering
 - 🌐 Acess my website on https://gui-tupinamba.com
 ##
 
@@ -31,10 +32,10 @@
 #### Academic education:
 In the overview below you will find my academic background:
 
-[<img align="left" height="94px" width="94px" alt="Warpnet" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRN9t96-2IgmmDcSuYsp8k8iebiPelF64d7Gw&usqp=CAU.png"/>](https://www.unicesumar.edu.br/)
-**High School** \
-[**Escola Estadual Deodoro da Fonseca**](https://www.instagram.com/ee.deodorodafonseca?igsh=MXUzZXNianJsNnNvZg==) \
-Completed in 2022.
+[<img align="left" height="94px" width="94px" alt="Warpnet" src="./src/"/>](https://portal.uniasselvi.com.br/)
+**Software Engineering** \
+[**Uniasselvi**](https://portal.uniasselvi.com.br/) \
+05/2024 - At the moment.
 <br>
 <br>
 
