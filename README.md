@@ -32,7 +32,7 @@
 #### Academic education:
 In the overview below you will find my academic background:
 
-[<img align="left" height="94px" width="94px" alt="Warpnet" src="./src/assets/logo-faculdade.jpg"/>](https://portal.uniasselvi.com.br/)
+[<img align="left" height="94px" width="94px" alt="Logo Uniasselvi" src="./src/assets/logo-faculdade.jpg" target="_blank"/>](https://portal.uniasselvi.com.br/)
 **Software Engineering** \
 [**Uniasselvi**](https://portal.uniasselvi.com.br/) \
 05/2024 - At the moment.
