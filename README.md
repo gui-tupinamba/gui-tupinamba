@@ -21,11 +21,13 @@
 #### Tools I use:
 [<img height="48px" width="48px" alt="Icone VS-Code" src="https://skillicons.dev/icons?i=vscode"/>](https://code.visualstudio.com)
 [<img height="48px" width="48px" alt="Icone GitHub" src="https://skillicons.dev/icons?i=github"/>](https://github.com/)
+[<img height="48px" width="48px" alt="Icone Figma" src="https://skillicons.dev/icons?i=figma"/>](https://www.figma.com/)
+[<img height="48px" width="48px" alt="Icone Git" src="https://skillicons.dev/icons?i=git"/>](https://www.git-scm.com/)
 ##
 
 #### Contact me:
-[<img alt="Linkedin" src="https://img.shields.io/badge/-linkedin-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white"/>](https://www.linkedin.com/in/gui-tupinamba)
-[<img alt="Email do Gmail" src="https://img.shields.io/badge/email-FFFFFF?style=for-the-badge&logo=gmail"/>](mailto:guitupinamba.dev@gmail.com)
+[<img height="48px" width="48px" alt="Icone Linkedin" src="https://skillicons.dev/icons?i=linkedin"/>](https://www.linkedin.com/in/gui-tupinamba)
+[<img height="48px" width="48px" alt="Icone Gmail" src="https://skillicons.dev/icons?i=gmail"/>](mailto:guitupinamba.dev@gmail.com)
 
 ##
 
