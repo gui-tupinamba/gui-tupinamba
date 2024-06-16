@@ -14,25 +14,27 @@
 [<img height="48px" width="48px" alt="Icone Html" src="https://skillicons.dev/icons?i=html"/>](https://developer.mozilla.org/pt-BR/docs/Web/HTML)
 [<img height="48px" width="48px" alt="Icone CSS" src="https://skillicons.dev/icons?i=css"/>](https://developer.mozilla.org/pt-BR/docs/Web/CSS)
 [<img height="48px" width="48px" alt="Icone Java Script" src="https://skillicons.dev/icons?i=js"/>](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript)
-[<img height="48px" width="48px" alt="Icone PHP" src="https://skillicons.dev/icons?i=react"/>](https://developer.mozilla.org/pt-BR/docs/Learn/Tools_and_testing/Client-side_JavaScript_frameworks/React_getting_started)
+[<img height="48px" width="48px" alt="Icone Java Script" src="https://skillicons.dev/icons?i=php"/>](https://developer.mozilla.org/pt-BR/docs/Glossary/PHP)
 
 ##
 
 #### Tools I use:
 [<img height="48px" width="48px" alt="Icone VS-Code" src="https://skillicons.dev/icons?i=vscode"/>](https://code.visualstudio.com)
 [<img height="48px" width="48px" alt="Icone GitHub" src="https://skillicons.dev/icons?i=github"/>](https://github.com/)
+[<img height="48px" width="48px" alt="Icone Figma" src="https://skillicons.dev/icons?i=figma"/>](https://www.figma.com/)
+[<img height="48px" width="48px" alt="Icone Git" src="https://skillicons.dev/icons?i=git"/>](https://www.git-scm.com/)
 ##
 
 #### Contact me:
-[<img alt="Linkedin" src="https://img.shields.io/badge/-linkedin-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white"/>](https://www.linkedin.com/in/gui-tupinamba)
-[<img alt="Email do Gmail" src="https://img.shields.io/badge/email-FFFFFF?style=for-the-badge&logo=gmail"/>](mailto:guitupinamba.dev@gmail.com)
+[<img height="48px" width="48px" alt="Icone Linkedin" src="https://skillicons.dev/icons?i=linkedin"/>](https://www.linkedin.com/in/gui-tupinamba)
+[<img height="48px" width="48px" alt="Icone Gmail" src="https://skillicons.dev/icons?i=gmail"/>](mailto:guitupinamba.dev@gmail.com)
 
 ##
 
 #### Academic education:
 In the overview below you will find my academic background:
 
-[<img align="left" height="94px" width="94px" alt="Warpnet" src="./src/assets/logo-faculdade.jpg"/>](https://estacio.br/)
+[<img align="left" height="94px" width="94px" alt="Warpnet" src="./src/assets/logo-faculdade.jpg"/>](https://portal.uniasselvi.com.br/)
 **Software Engineering** \
 [**Estácio**](https://estacio.br/) \
 06/2024 - At the moment.
