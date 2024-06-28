@@ -1,145 +1,124 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
+    <head>
 
-    <!--INFOS-->
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="description" content="Meu portfólio...">
-    <meta name="author" content="Guilherme Tupinambá">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guilherme Tupinambá</title>
+        <!--INFOS-->
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta name="description" content="Meu portfólio...">
+        <meta name="author" content="github.com/gui-tupinamba">
+        <meta name="keywords" content="Desenvolvimento web, Front-end, HTML5, CSS3, JavaScript, Freelancer, Guilherme Tupinambá, Guilherme, Web Developer, Desenvolvedor Web, Landing Page">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Guilherme Tupinambá</title>
 
-    <!--links-->
-    <link rel="shortcut icon" href="src/assets/logo-gui-tupinamba.ico" type="image/x-icon">
+        <!--links-->
+        <link rel="shortcut icon" href="src/assets/logo-gui-tupinamba.ico" type="image/x-icon">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
-    
-    <script src="script.js"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+        
+        <script src="script.js"></script>
 
-    <link
-    rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-    />
-    
-    <link rel="stylesheet" href="style.css">
+        <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+        />
+        
+        <link rel="stylesheet" href="style.css">
 
-    <script src="https://kit.fontawesome.com/b09e94b79c.js" crossorigin="anonymous"></script>
-    
-    <script src="./src/script.js"></script>
+        <script src="https://kit.fontawesome.com/b09e94b79c.js" crossorigin="anonymous"></script>
+        
+        <script src="./src/script.js"></script>
 
-</head>
-<body>
+    </head>
+    <body>
 
-    <!--Cabeçalho-->
-    <header class="cabecalho">
-        <div class="cabecalho-titulo">
-            <a href="index.html"><img class="img-logo" src="src/assets/logo-gui-tupinamba.png" alt=""></a>
-            <h1 class="cabecalho-titulo__titulo"><a href="index.html" class="cabecalho-titulo__titulo-link">Guilherme Tupinambá</a></h1>
-        </div>
-        <nav>
-            <ul class="cabecalho-lista">
-                <li class="cabecalho-lista__link"><a class="cabecalho-lista__button" href="#home">Home</a></li>
-                <li class="cabecalho-lista__link"><a class="cabecalho-lista__button" href="#about">About</a></li>
-                <li class="cabecalho-lista__link"><a class="cabecalho-lista__button" href="#portfolio">Portfolio</a></li>
-            </ul>
-        </nav>
-    </header>
-    
-    <!--Home-->
-    <section id="home" class="section-home">
-
-        <div class="section-home-titulo">
-            <h1 class="section-home-titulo__titulo">Guilherme <span class="destaque">Tupinambá</span></h1>
-            <p class="section-home-titulo__texto">Seja muito bem vindo ao meu site, aqui você não encontra a perfeição, mas o <span class="destaque">esforço</span> e a <span class="destaque">vontade</span> de entregar o que tenho de melhor.</p>
-        </div>
-        <div class="section-home-img">
-            <img class="section-home-titulo-img__img" src="src/assets/logo-gui-tupinamba.png" alt="">
-        </div>
-
-    </section>
-    
-    <!--About-->
-    <section id="about" class="section-about">
-        <div class="section-about-img">
-            <img src="./src/assets/perfil.jpg" alt="" class="section-about-img__img">
-            <ul class="section-about__lista">
-                <li class="section-about__lista-item">
-                    <a href="https://instagram.com/gui_tupinamba" target="_blank"><i class="fa-brands fa-instagram fa-3x fa"></i></a>
-                </li>
-                <li class="section-about__lista-item">
-                    <a href="https://www.threads.net/@gui_tupinamba" target="_blank">
-                        <i class="fa-brands fa-threads fa-3x fa"></i>
-                    </a>
-                </li>
-                <li class="section-about__lista-item">
-                    <a href="https://twitter.com/gui_tupinamba" target="_blank">
-                        <i class="fa-brands fa-x-twitter fa-3x fa"></i>
-                    </a>
-                </li>
-                <li class="section-about__lista-item">
-                    <a href="https://github.com/gui-tupinamba" target="_blank"><i class="fa-brands fa-github fa-3x fa"></i></a>
-                </li>
-                <li class="section-about__lista-item">
-                    <a href="https://linkedin.com/in/gui-tupinamba" target="_blank">
-                        <i class="fa-brands fa-linkedin fa-3x fa"></i>
-                    </a>
-                </li>
-            </ul>
-        </div>
-        <div class="section-about-titulo desaparecer-mobile">
-            <h1 class="section-about-titulo__titulo">Sobre mim</h1>
-            <p class="section-about-titulo__texto">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusantium ducimus expedita corporis veniam delectus, magnam aspernatur, iure quaerat corrupti, eaque necessitatibus iusto! Qui veritatis iure quisquam quasi commodi, blanditiis ab!</p>
-        </div>
-    </section>
-
-    <!--Portfolio-->
-    <section id="portfolio" class="section-portfolio">
-
-        <div class="section-portfolio-info">
-            <h1 class="section-portfolio-title">Projetos</h1>
-            <p class="section-portfolio-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, possimus laborum itaque molestiae amet necessitatibus dolores incidunt. Quae, sapiente illo, magnam facilis culpa nesciunt vero mollitia error, aut nulla necessitatibus!</p>
-        </div>
-
-        <div class="section-portfolio__cards">
-            <div class="section-portfolio__card">
-                <div class="section-portfolio__card-infor-project">
-                    <h2 class="section-portfolio__card-title">Projeto 1</h2>
-                    <img src="src/assets/default.jpg" alt="Imagem projeto" class="section-portfolio__card-image">
-                    <p class="section-portfolio__card-description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa minus optio eius iste iure sapiente ex, doloribus velit eum possimus aspernatur adipisci similique saepe, eaque officiis accusantium, iusto eligendi? Iusto!</p>
-                </div>
-                <a href="" class="section-portfolio__card-button">Mais</a>
+        <!--Cabeçalho-->
+        <header class="cabecalho">
+            <div class="cabecalho-titulo">
+                <a href="index.html"><img class="img-logo" src="src/assets/logo-gui-tupinamba.png" alt=""></a>
+                <h1 class="cabecalho-titulo__titulo"><a href="index.html" class="cabecalho-titulo__titulo-link">Guilherme Tupinambá</a></h1>
             </div>
-            <div class="section-portfolio__card">
-                <div class="section-portfolio__card-infor-project">
-                    <h2 class="section-portfolio__card-title">Projeto 2</h2>
-                    <img src="src/assets/default.jpg" alt="Imagem projeto" class="section-portfolio__card-image">
-                    <p class="section-portfolio__card-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, dignissimos culpa molestiae amet dicta qui quisquam excepturi quo, itaque nobis perspiciatis eos sunt praesentium alias assumenda nisi et dolorem nulla.</p>
-                </div>
-                <a href="" class="section-portfolio__card-button">Mais</a>
-            </div>
-            <div class="section-portfolio__card">
-                <div class="section-portfolio__card-infor-project">
-                    <h2 class="section-portfolio__card-title">Projeto 3</h2>
-                    <img src="src/assets/default.jpg" alt="Imagem projeto" class="section-portfolio__card-image">
-                    <p class="section-portfolio__card-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. At quasi eaque enim, delectus et neque? Rem nesciunt porro nobis voluptas esse, quae unde quas eius amet cupiditate reprehenderit nisi non. Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima deserunt dolor ipsam. Aperiam reiciendis possimus laudantium nisi vitae, nobis pariatur praesentium doloribus? In sapiente modi illum placeat molestias numquam sunt.</p>
-                </div>
-                <a href="" class="section-portfolio__card-button">Mais</a>
-            </div>
-        </div>
+            <nav class="navbar">
+                <ul class="cabecalho-lista">
+                    <li class="cabecalho-lista__link"><a class="cabecalho-lista__button" href="#home">Home</a></li>
+                    <li class="cabecalho-lista__link"><a class="cabecalho-lista__button" href="#about">About</a></li>
+                    <li class="cabecalho-lista__link"><a class="cabecalho-lista__button" href="#portfolio">Portfolio</a></li>
+                </ul>
+            </nav>
+        </header>
+        
+        <!--Home-->
+        <section id="home" class="section-home">
 
-    </section>
+            <div class="section-home-titulo">
+                <p class="section-home-titulo__texto" >Olá, meu nome é</p>
+                <div class="meu-nome">
+                    <h1 class="section-home-titulo__titulo">Guilherme</h1><span class="destaque section-home-titulo__titulo animated-text">Tupinambá</span>
+                </div>
+                <p class="section-home-titulo__titulo2">Estudo <span class="destaque">Engenharia de Software</span> e sou <span class="destaque">Desenvolvedor Frontend</span>.</p>
+            </div>
+            <div class="section-home-img">
+                <figure>
+                    <img class="section-home-titulo-img__img" src="./src/assets/perfil.jpg" alt="" />
+                    <figcaption>Guilherme Tupinambá</figcaption>
+                </figure>
+            </div>
+            <a class="section-button" href="/">Entrar em Contato</a>
 
-    <!--Footer-->
-    <footer class="rodape">
-        <div class="rodape-guitupinamba">
-            <a href="https:gui-tupinamba.com" class="rodape-guitupinamba-link">
-                <img src="src/assets/logo-gui-tupinamba.png" alt="Logo Guilherme Tupinambá" class="rodape-guitupinamba-logo">
-                <p>Guilherme Tupinambá — 2024 - © Todos os direitos reservados<p>
-            </a>
-        </div>
-    </footer>
-</body>
+        </section>
+        
+        <!--About-->
+        <section id="about" class="section-about">
+            
+        </section>
+
+        <!--Portfolio-->
+        <section id="portfolio" class="section-portfolio">
+
+            <div class="section-portfolio-info">
+                <h1 class="section-portfolio-title">Projetos</h1>
+                <p class="section-portfolio-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, possimus laborum itaque molestiae amet necessitatibus dolores incidunt. Quae, sapiente illo, magnam facilis culpa nesciunt vero mollitia error, aut nulla necessitatibus!</p>
+            </div>
+
+            <div class="section-portfolio__cards">
+                <div class="section-portfolio__card">
+                    <div class="section-portfolio__card-infor-project">
+                        <h2 class="section-portfolio__card-title">Projeto 1</h2>
+                        <img src="src/assets/default.jpg" alt="Imagem projeto" class="section-portfolio__card-image">
+                        <p class="section-portfolio__card-description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa minus optio eius iste iure sapiente ex, doloribus velit eum possimus aspernatur adipisci similique saepe, eaque officiis accusantium, iusto eligendi? Iusto!</p>
+                    </div>
+                    <a href="" class="section-portfolio__card-button">Mais</a>
+                </div>
+                <div class="section-portfolio__card">
+                    <div class="section-portfolio__card-infor-project">
+                        <h2 class="section-portfolio__card-title">Projeto 2</h2>
+                        <img src="src/assets/default.jpg" alt="Imagem projeto" class="section-portfolio__card-image">
+                        <p class="section-portfolio__card-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, dignissimos culpa molestiae amet dicta qui quisquam excepturi quo, itaque nobis perspiciatis eos sunt praesentium alias assumenda nisi et dolorem nulla.</p>
+                    </div>
+                    <a href="" class="section-portfolio__card-button">Mais</a>
+                </div>
+                <div class="section-portfolio__card">
+                    <div class="section-portfolio__card-infor-project">
+                        <h2 class="section-portfolio__card-title">Projeto 3</h2>
+                        <img src="src/assets/default.jpg" alt="Imagem projeto" class="section-portfolio__card-image">
+                        <p class="section-portfolio__card-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. At quasi eaque enim, delectus et neque? Rem nesciunt porro nobis voluptas esse, quae unde quas eius amet cupiditate reprehenderit nisi non. Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima deserunt dolor ipsam. Aperiam reiciendis possimus laudantium nisi vitae, nobis pariatur praesentium doloribus? In sapiente modi illum placeat molestias numquam sunt.</p>
+                    </div>
+                    <a href="" class="section-portfolio__card-button">Mais</a>
+                </div>
+            </div>
+
+        </section>
+
+        <!--Footer-->
+        <footer class="rodape">
+            <div class="rodape-guitupinamba">
+                <a href="https:gui-tupinamba.com" class="rodape-guitupinamba-link">
+                    <img src="src/assets/logo-gui-tupinamba.png" alt="Logo Guilherme Tupinambá" class="rodape-guitupinamba-logo">
+                    <p>Guilherme Tupinambá — 2024 - © Todos os direitos reservados<p>
+                </a>
+            </div>
+        </footer>
+    </body>
 </html>

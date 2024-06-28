@@ -1,15 +1,14 @@
 .cabecalho {
-    background-color: var(--cor-preto-claro);
+    background-color: rgba(27, 21, 21, 0.50);
     display: flex;
-    justify-content: space-between;
     align-items: center;
     width: 100%;
     height: 70px;
     position: fixed;
-    top: 0;
 }
 
 .cabecalho-titulo {
+    margin-left: 0;
     padding: 0 1em;
     
     display: flex;
@@ -31,19 +30,26 @@
     color: var(--cor-branco);
 }
 
+.navbar {
+    position: inherit;
+    margin-left: 45%;
+}
+
 .cabecalho-lista{
     display: flex;
     justify-content: center;
-    padding: 2em;
+    padding: 4em;
     list-style-type: none;
 }
 
 .cabecalho-lista__button {
     margin: 0.5em;
     padding: 1em;
+    font-size: 1.4rem;
     text-decoration: none;
     color: var(--cor-branco);
     border-radius: 1em;
+    transition: background-color 0.5s;
 }
 
 .cabecalho-lista__button:hover{

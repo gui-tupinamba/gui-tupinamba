@@ -9,6 +9,7 @@
     --cor-preto-claro: #363333;
     --cor-laranja: #E16428;
     --cor-branco: #F6E9E9;
+    font-size: 62.5%;
     --font-principal: "Inter";
 }
 
@@ -41,7 +42,20 @@ body {
     background-color: var(--cor-preto);
     color: var(--cor-branco);
     font-family: var(--font-principal);
-    width: 100vw;
+    width: 100%;
+}
+
+figure {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+figcaption {
+    font-style: italic;
+    font-size: 1.2rem;
+    color: var(--cor-branco);
+    text-align: end;
 }
 
 .destaque {

@@ -1,60 +1,94 @@
-.section-home{
+.section-home {
+    background-color: var(--cor-preto);
     height: 100vh;
-    padding: 0 5em;
-
-    
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 50px;
+    display: grid;
+    grid-template-areas: 
+    "Titulo  . Imagem Imagem"
+    "Titulo . Imagem Imagem"
+    "Botao Botao Imagem Imagem"
+    ;
+    grid-template-rows: 50%;
+    grid-template-columns: 50%;
+    justify-content: center;
+    align-content: center;
 }
 
 .section-home-titulo {
+    grid-area: Titulo;
     display: flex;
-    justify-content: space-between;
+    gap: 1rem;
+    justify-content: center;
     flex-direction: column;
-    gap: 10px;
-}
-
-.section-home-titulo__titulo {
-    font-size: 64px;
 }
 
 .section-home-titulo__texto {
-    font-size: 24px;
+    font-size: 3.2rem;
+    width: 60%;
+    text-align: justify;
+}
+
+.meu-nome {
+    display: flex;
+    gap: 2rem;
+}
+
+.section-home-titulo__titulo {
+    font-size: 6.2rem;
+    font-weight: bold;
+}
+
+.section-home-titulo__titulo2 {
+    font-size: 4.2rem;
+    width: 70%;
+}
+
+.animated-text {
+    overflow: hidden;
+    border-right: 1rem solid var(--cor-branco);
+    white-space: nowrap;
+    animation: typing 5s steps(40, end) infinite, blink-caret 1s step-end infinite;
+}
+@keyframes typing {
+    0% { width: 0; }
+    50% { width: 330px; }
+    60% { width: 330px; } 
+    80% { width: 330px; }
+    100% { width: 0; }
+}
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: var(--cor-branco) }
 }
 
 .section-home-titulo-img__img {
-    border: solid 1px var(--cor-laranja);
-    border-radius: 100px;
-    width: 350px;
+    grid-area: Imagem;
+    border: 3px solid var(--cor-laranja);
+    border-radius: 100px 50px 10px 50px;
+    width: 550px;
 }
 
-@media screen and (max-width: 1024px){
-    .section-home{
-        flex-direction: column-reverse;
-        padding: 2em 2em;
-        margin: 2em 0;
-        height: 100%;
-    }
+.section-button {
+    grid-area: Botao;
+    width: 300px;
 
-    .section-home-titulo{
-        margin:  0 2em;
-    }
+    padding: 1rem;
+    margin-top: 1rem;
 
-    .section-home-titulo__titulo{
-        font-size: 3em;
-    }
-    
-    .section-home-titulo__texto{
-        font-size:1.5em;
-    }
-
-    .section-home-img{
-        margin:  2em 2em;
-    }
-
-    .section-home-titulo-img__img {
-        width: 50vw
-    }
+    font-size: 2.4rem;
+    color: var(--cor-preto);
+    background-color: var(--cor-laranja);
+    box-shadow: 1px 1px 10px black;
+    border-radius: 1rem;
+    text-decoration: none;
+    text-align: center;
+    align-items: center;
+    transition: background-color 0.5s, color 0.5s;
 }
+
+.section-button:hover {
+    background-color: var(--cor-preto);
+    color: var(--cor-branca);
+}
+
+/* @media screen and (max-width: 1024px){
+} Mobile */
