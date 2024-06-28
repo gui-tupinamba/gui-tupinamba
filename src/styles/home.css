@@ -50,9 +50,9 @@
 }
 @keyframes typing {
     0% { width: 0; }
-    50% { width: 330px; }
-    60% { width: 330px; } 
-    80% { width: 330px; }
+    50% { width: 350px; }
+    60% { width: 350px; } 
+    80% { width: 350px; }
     100% { width: 0; }
 }
 @keyframes blink-caret {
