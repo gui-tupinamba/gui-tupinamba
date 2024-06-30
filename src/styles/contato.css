@@ -1,6 +1,6 @@
-.section-portfolio {
+.section-contato {
     background-color: var(--cor-preto-claro);
-    height: 100vh;
+    height: 50vh;
     display: grid;
     grid-template-areas: 
     "Titulo  . Imagem Imagem"

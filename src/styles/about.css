@@ -1,77 +1,35 @@
 .section-about {
-    background-color: var(--cor-laranja);
+    background-color: var(--cor-preto);
     height: 100vh;
-    padding: 0 5em;
-
-    color: var(--cor-preto);
-    
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 50px;
-}
-
-.section-about-img {
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-    align-items: center;
-    gap: 2em;
-}
-
-.section-about-img__img {
-    width: 350px;
-    border: solid 1px black;
-    border-radius: 50% 20% 50% 20%;
-}
-
-.section-about__lista {
-    display: flex;
-    align-items: center;
-    gap: 1em;
-}
-
-.section-about__lista-item {
-    list-style-type: none;
-    margin: 0.1em;
-}
-
-.fa {
-    color: var(--cor-preto);
+    display: grid;
+    grid-template-areas: 
+    "Titulo  . Imagem Imagem"
+    "Titulo . Imagem Imagem"
+    "Botao Botao Imagem Imagem"
+    ;
+    grid-template-rows: 50%;
+    grid-template-columns: 50%;
+    justify-content: center;
+    align-content: center;
 }
 
 .section-about-titulo {
+    grid-area: Titulo;
     display: flex;
-    justify-content: space-between;
+    gap: 1rem;
+    justify-content: center;
     flex-direction: column;
-    gap: 10px;
 }
 
 .section-about-titulo__titulo {
-    font-size: 64px;
+    font-size: 6.4rem;
 }
 
 .section-about-titulo__texto {
-    font-size: 24px;
+    font-size: 2.4rem;
 }
 
-@media screen and (max-width: 1024px){
-    .section-about{
-        flex-direction: column;
-        padding: 2em 2em;
-        margin: 2em 0;
-        height: 100%;
-    }
-
-    .section-about-img__img{
-        width: 50vw;
-    }
-
-    .section-about-titulo__titulo {
-        font-size: 3em;
-    }
+.section-about-img {
+    grid-area: Imagem;
     
-    .section-about-titulo__texto {
-        font-size: 1.5em;
-    }
 }

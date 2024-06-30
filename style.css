@@ -3,6 +3,7 @@
 @import url(./src/styles/about.css);
 @import url(./src/styles/portfolio.css);
 @import url(./src/styles/rodape.css);
+@import url(./src/styles/contato.css);
 
 :root {
     --cor-preto: #272121;
@@ -39,7 +40,6 @@ html {
 }
 
 body {
-    background-color: var(--cor-preto);
     color: var(--cor-branco);
     font-family: var(--font-principal);
     width: 100%;
