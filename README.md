@@ -7,7 +7,6 @@
 - ⚡ I like games, tecnology and I love listenig to music and playing sports
 - 💼 I'm currently unemployed and looking for an internship in the IT field
 - 🎓 Software Engineering
-- 🌐 Acess my website on https://gui-tupinamba.com
 ##
 
 #### Learning in the moment:
