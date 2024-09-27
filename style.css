@@ -61,9 +61,3 @@ figcaption {
 .destaque {
     color: var(--cor-laranja);
 }
-
-@media screen and (max-width: 786px) {
-    .sumir-mobile{
-        display: none;
-    }
-}

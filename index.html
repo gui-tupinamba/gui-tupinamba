@@ -36,7 +36,9 @@
         <header class="cabecalho">
             <div class="cabecalho-titulo">
                 <a href="index.html"><img class="img-logo" src="src/assets/logo-gui-tupinamba.png" alt=""></a>
-                <h1 class="cabecalho-titulo__titulo"><a href="index.html" class="cabecalho-titulo__titulo-link">Guilherme Tupinambá</a></h1>
+                <h1 class="cabecalho-titulo__titulo">
+                    <a href="index.html" class="cabecalho-titulo__titulo-link">Guilherme Tupinambá</a>
+                </h1>
             </div>
             <nav class="navbar">
                 <ul class="cabecalho-lista">
@@ -49,9 +51,9 @@
                         <a class="cabecalho-lista__button" href="#about">About</a>
                     </li>
                     
-                    <li class="cabecalho-lista__link">
+                    <!-- <li class="cabecalho-lista__link">
                         <a class="cabecalho-lista__button" href="#portfolio">Portfolio</a>
-                    </li>
+                    </li> -->
 
                     <li>
                         <a class="cabecalho-lista__button" href="#contato">Contato</a>
@@ -65,11 +67,12 @@
         <main>
             <section id="home" class="section-home">
                 <div class="section-home-titulo">
-                    <p class="section-home-titulo__texto" >Olá, meu nome é</p>
+                    <p class="section-home-titulo__texto sumir-mobile__home" >Olá, meu nome é</p>
                     <div class="meu-nome">
                         <h1 class="section-home-titulo__titulo">Guilherme</h1><span class="destaque section-home-titulo__titulo animated-text">Tupinambá</span>
                     </div>
                     <p class="section-home-titulo__titulo2">Estudo <span class="destaque">Engenharia de Software</span> e sou <span class="destaque">Desenvolvedor Frontend</span>.</p>
+                    <a class="section-button sumir-desktop__home" href="/">Entrar em Contato</a>
                 </div>
                 <div class="section-home-img">
                     <figure>
@@ -77,27 +80,34 @@
                         <figcaption>Guilherme Tupinambá</figcaption>
                     </figure>
                 </div>
-                <a class="section-button" href="/">Entrar em Contato</a>
+                <a class="section-button sumir-mobile__home" href="/">Entrar em Contato</a>
             </section>
             
             <!-- Sobre -->
             <section id="about" class="section-about">
                 <div class="section-about-titulo">
-                    <h2 class="section-about-titulo__titulo">Sobre mim</h2>
-                    <p class="section-about-titulo__texto">
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magni saepe accusantium amet labore exercitationem ullam perspiciatis voluptates fugit, temporibus vero, ducimus officiis itaque nulla fuga placeat sequi explicabo beatae doloremque commodi et ipsa distinctio ipsam! Eum ducimus nisi deleniti porro? Sequi veritatis, labore amet adipisci ad impedit laboriosam quas alias, neque, reiciendis aut asperiores quis officia sint veniam culpa fugit omnis animi tempore corrupti facere iste explicabo ex voluptatem. Provident maiores tempore non, voluptate accusantium unde vel fuga ducimus, rerum aspernatur repellendus. Rem reiciendis autem molestias voluptatibus rerum omnis magnam consequatur, animi obcaecati praesentium quasi delectus quod neque similique eligendi!
-                    </p>
+                    <h2 class="section-about-titulo__titulo">Quem sou eu?</h2>
                 </div>
-                <div>
-            
+                <div class="section-about-textos">
+                    <p class="section-about-textos__paragrafo">
+                        Sou <span class="destaque">Guilherme</span>, tenho <span class="destaque">19 anos</span> e sou um desenvolvedor front-end, em constante aprendizado na área de <span class="destaque">Engenharia de Software</span>. Minha paixão por tecnologia me impulsiona a criar <span class="destaque">soluções inovadoras</span> e busco construir projetos que proporcionem <span class="destaque">experiências digitais significativas</span>.
+                    </p>
+                    <br>
+                    <p class="section-about-textos__paragrafo">Além do desenvolvimento, adoro me manter ativo praticando esportes e explorando novos jogos.</p>
+                </div>
+                <div class="section-about-img">
+                    <img class="section-about-img__image" src="./src/assets/bike.jpg" alt="" />
+                    <img class="section-about-img__image" src="./src/assets/volei.jpg" alt="" />
                 </div>
             </section>
-            <!--Portfolio-->
+
+            <!-- Portfolio
             <section id="portfolio" class="section-portfolio">
                 <div>
                     <h2>Meu Portfólio</h2>
+                    <h3>No momento não tenho projetos no meu portfólio, mas você pode acessar meus repositórios do GITHUB clicando <a href="https://github.com/gui-tupinamba/">aqui</a></h3>
                 </div>
-            </section>
+            </section> -->
 
             <!-- Contato -->
             <section id="contato" class="section-contato">
@@ -111,10 +121,15 @@
         <!--Footer-->
         <footer class="rodape">
             <div class="rodape-guitupinamba">
-                <a href="https:gui-tupinamba.com" class="rodape-guitupinamba-link">
-                    <img src="src/assets/logo-gui-tupinamba.png" alt="Logo Guilherme Tupinambá" class="rodape-guitupinamba-logo">
-                    <p>Guilherme Tupinambá — 2024 - © Todos os direitos reservados<p>
-                </a>
+                <img src="src/assets/logo-gui-tupinamba.png" alt="Logo Guilherme Tupinambá" class="rodape-guitupinamba-logo">
+                <div class="rodape-guitupinamba-link">
+                    <a href="https:gui-tupinamba.com" target="_blank">
+                        <p>Guilherme Tupinambá — 2024 - © Todos os direitos reservados<p>
+                    </a>
+                    <a href="mailto:guitupinamba.dev@gmail.com" target="_blank">
+                        <p>Entre em contato: guitupinamba.dev@gmail.com</p>
+                    </a>
+                </div>
             </div>
         </footer>
     </body>

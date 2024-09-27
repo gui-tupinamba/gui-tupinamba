@@ -1,21 +1,23 @@
 .rodape{
+    display: flex;
     background-color: var(--cor-laranja);
     height: 100%;
     padding: 1em;
+    justify-content: center;
 }
-
 .rodape-guitupinamba{
     display: flex;
     flex-direction: row;
-    gap: 1px;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5em
 }
 
-.rodape-guitupinamba-link{
+.rodape-guitupinamba-link, a{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
-    gap: 5px;
-    
+    gap: 0.2em;
     text-decoration: none;
     color: var(--cor-branco);
 }
@@ -24,7 +26,7 @@
     width: 5%;
 }
 
-@media screen and (max-width: 1024px) {
+@media (min-width: 577px) and (max-width: 767px) {
     .rodape-guitupinamba-logo{
         width: 50px;
     }
