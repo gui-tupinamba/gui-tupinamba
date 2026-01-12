@@ -8,8 +8,8 @@
 ##
 
 #### Learning in the moment:
-[<img height="48px" width="48px" alt="Icone Java Script" src="https://skillicons.dev/icons?i=dart"/>](https://dart.dev/docs)
-[<img height="48px" width="48px" alt="Icone Java Script" src="https://skillicons.dev/icons?i=flutter"/>](https://docs.flutter.dev/)
+[<img height="48px" width="48px" alt="Icone ReactJs" src="https://skillicons.dev/icons?i=react"/>](https://react.dev/)
+[<img height="48px" width="48px" alt="Icone Java Script" src="https://skillicons.dev/icons?i=tailwind"/>](https://tailwindcss.com/)
 
 ##
 
