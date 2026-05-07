@@ -4,7 +4,7 @@
 ### Hi, my name is Guilherme, welcome to my GitHub profile. 
 - 🔰 I'm from Boa Vista - RR, Brasil
 - ⚡ I like games, tecnology and I love listenig to music and playing sports
-- 💼 I'm currently unemployed and looking for an internship in the IT field
+- 💼 I work at Pigz
 ##
 
 #### Learning in the moment:
