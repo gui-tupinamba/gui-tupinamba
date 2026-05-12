@@ -1,0 +1,14 @@
+.section-portfolio {
+    background-color: var(--cor-preto-claro);
+    height: 100vh;
+    display: grid;
+    grid-template-areas: 
+    "Titulo  . Imagem Imagem"
+    "Titulo . Imagem Imagem"
+    "Botao Botao Imagem Imagem"
+    ;
+    grid-template-rows: 50%;
+    grid-template-columns: 50%;
+    justify-content: center;
+    align-content: center;
+}
