@@ -1,14 +1,113 @@
 .section-contato {
     background-color: var(--cor-preto-claro);
-    height: 50vh;
-    display: grid;
-    grid-template-areas: 
-    "Titulo  . Imagem Imagem"
-    "Titulo . Imagem Imagem"
-    "Botao Botao Imagem Imagem"
-    ;
-    grid-template-rows: 50%;
-    grid-template-columns: 50%;
+    height: 100vh;
+
+    padding: 10em;
+    display: flex;
     justify-content: center;
-    align-content: center;
+    flex-direction: row;
+    gap: 25em;
+
+    font-family: var(--font-principal);
+}
+
+
+
+/* Fale comigo */
+.section-contato_redes-sociais {
+    font-size: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+}
+
+.section-contato_redes-sociais ul {
+    margin-top: 1em;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4em;
+    list-style-type: none;
+}
+
+.section-contato_redes-sociais ul li {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+
+.section-contato_redes-sociais ul li a {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 0.5em;
+    text-decoration: none;
+    color: var(--cor-branco);
+}
+
+.section-contato_redes-sociais ul li a:hover {
+    color: var(--cor-laranja);
+}
+
+.section-contato_redes-sociais__icon{
+    width: 60px;
+    height: auto;
+}
+
+/* Formulário para enviar mensagem */
+.section-contato_form {
+    
+
+    font-size: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.section-contato_form form {
+    margin-top: 1em;
+    background-color: var(--cor-preto);
+    padding: 2em;
+    height: 40vh;
+    border: 3px solid var(--cor-laranja);
+    box-shadow: 10px 10px 50px black;
+    border-radius: 10px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+}
+
+.section-contato_form form input, .section-contato_form form textarea {
+    padding: 0.5em;
+    font-size: 1.5rem;
+    border: 2px solid var(--cor-laranja);
+    border-radius: 5px;
+    background-color: var(--cor-preto-claro);
+    color: var(--cor-branco);
+}
+
+.section-contato_form form button {
+    font-size: 3rem;
+    color: var(--cor-preto);
+    background-color: var(--cor-laranja);
+    border-radius: 10px;
+    width: 300px;
+    height: 60px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.5s, color 0.5s;
+}
+
+.section-contato_form form button:hover {
+    background-color: var(--cor-preto);
+    color: var(--cor-branco);
+}
+
+.section-contato_form form textarea {
+    width: 300px;
+    height: 100px;
+    resize: none;
 }
