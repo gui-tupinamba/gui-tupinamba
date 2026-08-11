@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Admin</title>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="card">
+        <h1>Painel Admin</h1>
+
+        <!-- LOGIN -->
+
+        <div id="login">
+          <input type="password" id="senha" placeholder="Senha" />
+
+          <button id="btnEntrar">Entrar</button>
+        </div>
+
+        <!-- PAINEL -->
+
+        <div id="painel" style="display: none">
+          <div class="topo">
+            <div class="info">
+              <strong>Total:</strong>
+
+              <span id="total"> 0 </span>
+            </div>
+
+            <button id="btnAtualizar">Atualizar</button>
+          </div>
+
+          <input type="text" id="busca" placeholder="Buscar nome..." />
+
+          <div id="lista"></div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
