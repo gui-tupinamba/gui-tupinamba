@@ -1,0 +1,467 @@
+* {
+  box-sizing: border-box;
+
+  margin: 0;
+
+  padding: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+
+  background: #f4f5f7;
+
+  color: #1f2937;
+
+  min-height: 100vh;
+}
+
+.pagina {
+  width: 100%;
+
+  min-height: 100vh;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  padding: 20px;
+}
+
+.card {
+  width: 100%;
+
+  max-width: 500px;
+
+  background: #ffffff;
+
+  border-radius: 18px;
+
+  padding: 32px;
+
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.08);
+}
+
+/* =========================================
+CABEÇALHO
+========================================= */
+
+.cabecalho {
+  text-align: center;
+
+  margin-bottom: 30px;
+}
+
+.icone-evento {
+  width: 60px;
+
+  height: 60px;
+
+  margin: 0 auto 15px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #111827;
+
+  font-size: 28px;
+}
+
+.cabecalho h1 {
+  font-size: 26px;
+
+  margin-bottom: 8px;
+
+  color: #111827;
+}
+
+.cabecalho p {
+  color: #6b7280;
+
+  font-size: 15px;
+
+  line-height: 1.5;
+}
+
+/* =========================================
+CAMPO
+========================================= */
+
+.campo {
+  margin-bottom: 28px;
+}
+
+label {
+  display: block;
+
+  font-size: 15px;
+
+  font-weight: 600;
+
+  margin-bottom: 8px;
+
+  color: #374151;
+}
+
+input {
+  width: 100%;
+
+  height: 50px;
+
+  padding: 0 14px;
+
+  border: 1px solid #d1d5db;
+
+  border-radius: 9px;
+
+  outline: none;
+
+  font-size: 16px;
+
+  color: #111827;
+
+  background: #ffffff;
+
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
+}
+
+input:focus {
+  border-color: #111827;
+
+  box-shadow: 0 0 0 3px rgba(17, 24, 39, 0.08);
+}
+
+/* =========================================
+ACOMPANHANTES
+========================================= */
+
+.secao-acompanhantes {
+  margin-bottom: 5px;
+}
+
+.titulo-secao {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  margin-bottom: 12px;
+}
+
+.titulo-secao h2 {
+  font-size: 16px;
+
+  margin-bottom: 3px;
+
+  color: #374151;
+}
+
+.titulo-secao span {
+  font-size: 13px;
+
+  color: #9ca3af;
+}
+
+.contador {
+  min-width: 30px;
+
+  height: 30px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #f3f4f6;
+
+  color: #374151 !important;
+
+  font-weight: bold;
+}
+
+/* =========================================
+LISTA
+========================================= */
+
+.lista-acompanhantes {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 10px;
+}
+
+.acompanhante {
+  display: flex;
+
+  gap: 8px;
+
+  animation: aparecer 0.2s ease;
+}
+
+@keyframes aparecer {
+  from {
+    opacity: 0;
+
+    transform: translateY(-5px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateY(0);
+  }
+}
+
+.acompanhante input {
+  flex: 1;
+}
+
+/* =========================================
+REMOVER
+========================================= */
+
+.btn-remover {
+  width: 50px;
+
+  height: 50px;
+
+  border: none;
+
+  border-radius: 9px;
+
+  background: #fee2e2;
+
+  color: #dc2626;
+
+  font-size: 22px;
+
+  cursor: pointer;
+
+  flex-shrink: 0;
+}
+
+.btn-remover:hover {
+  background: #fecaca;
+}
+
+/* =========================================
+ADICIONAR
+========================================= */
+
+.btn-adicionar {
+  width: 100%;
+
+  height: 48px;
+
+  margin-top: 12px;
+
+  border: 2px dashed #d1d5db;
+
+  border-radius: 9px;
+
+  background: #ffffff;
+
+  color: #374151;
+
+  font-size: 15px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.btn-adicionar:hover {
+  background: #f9fafb;
+}
+
+.btn-adicionar span {
+  font-size: 20px;
+
+  margin-right: 5px;
+}
+
+/* =========================================
+CONFIRMAR
+========================================= */
+
+.btn-confirmar {
+  width: 100%;
+
+  height: 54px;
+
+  margin-top: 28px;
+
+  border: none;
+
+  border-radius: 9px;
+
+  background: #111827;
+
+  color: #ffffff;
+
+  font-size: 16px;
+
+  font-weight: bold;
+
+  cursor: pointer;
+}
+
+.btn-confirmar:hover {
+  opacity: 0.9;
+}
+
+.btn-confirmar:disabled {
+  opacity: 0.5;
+
+  cursor: not-allowed;
+}
+
+/* =========================================
+CARREGANDO
+========================================= */
+
+.carregando {
+  display: none;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 10px;
+
+  margin-top: 15px;
+
+  color: #6b7280;
+
+  font-size: 14px;
+}
+
+.spinner {
+  width: 18px;
+
+  height: 18px;
+
+  border: 2px solid #e5e7eb;
+
+  border-top-color: #111827;
+
+  border-radius: 50%;
+
+  animation: girar 0.8s linear infinite;
+}
+
+@keyframes girar {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* =========================================
+MENSAGEM
+========================================= */
+
+.mensagem {
+  display: none;
+
+  margin-top: 20px;
+
+  padding: 15px;
+
+  border-radius: 9px;
+
+  text-align: center;
+
+  font-size: 15px;
+
+  line-height: 1.5;
+}
+
+.mensagem.sucesso {
+  display: block;
+
+  background: #dcfce7;
+
+  color: #166534;
+}
+
+.mensagem.erro {
+  display: block;
+
+  background: #fee2e2;
+
+  color: #991b1b;
+}
+
+/* =========================================
+RODAPÉ
+========================================= */
+
+footer {
+  text-align: center;
+
+  margin-top: 25px;
+
+  padding-top: 20px;
+
+  border-top: 1px solid #f3f4f6;
+
+  color: #9ca3af;
+
+  font-size: 12px;
+}
+
+/* =========================================
+IFRAME INVISÍVEL
+========================================= */
+
+.iframe-escondido {
+  position: absolute;
+
+  width: 1px;
+
+  height: 1px;
+
+  border: 0;
+
+  opacity: 0;
+
+  pointer-events: none;
+}
+
+/* =========================================
+CELULAR
+========================================= */
+
+@media (max-width: 480px) {
+  .pagina {
+    padding: 10px;
+
+    align-items: flex-start;
+  }
+
+  .card {
+    margin-top: 10px;
+
+    padding: 24px 20px;
+
+    border-radius: 14px;
+  }
+
+  .cabecalho h1 {
+    font-size: 23px;
+  }
+}
