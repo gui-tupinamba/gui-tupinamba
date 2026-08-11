@@ -5,43 +5,130 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Admin</title>
+    <title>Administração - Confirmações</title>
 
     <link rel="stylesheet" href="style.css" />
   </head>
 
   <body>
-    <div class="container">
-      <div class="card">
-        <h1>Painel Admin</h1>
+    <main class="pagina">
+      <section class="card">
+        <!-- =====================================
+                 CABEÇALHO
+            ====================================== -->
 
-        <!-- LOGIN -->
+        <header class="cabecalho">
+          <div class="icone-evento">💍</div>
 
-        <div id="login">
-          <input type="password" id="senha" placeholder="Senha" />
+          <h1>Confirmações</h1>
 
-          <button id="btnEntrar">Entrar</button>
-        </div>
+          <p>Painel de administração</p>
+        </header>
 
-        <!-- PAINEL -->
+        <!-- =====================================
+                 LOGIN
+            ====================================== -->
 
-        <div id="painel" style="display: none">
-          <div class="topo">
-            <div class="info">
-              <strong>Total:</strong>
+        <div id="login" class="login">
+          <div class="campo">
+            <label for="senha"> Senha de acesso </label>
 
-              <span id="total"> 0 </span>
-            </div>
-
-            <button id="btnAtualizar">Atualizar</button>
+            <input
+              type="password"
+              id="senha"
+              placeholder="Digite a senha"
+              autocomplete="current-password"
+            />
           </div>
 
-          <input type="text" id="busca" placeholder="Buscar nome..." />
+          <button type="button" id="btnEntrar" class="btn-confirmar">
+            Entrar
+          </button>
 
-          <div id="lista"></div>
+          <div id="erroLogin" class="mensagem erro"></div>
         </div>
-      </div>
-    </div>
+
+        <!-- =====================================
+                 PAINEL
+            ====================================== -->
+
+        <div id="painel" class="painel" style="display: none">
+          <!-- =================================
+                     ESTATÍSTICAS
+                ================================== -->
+
+          <div class="estatisticas">
+            <div class="estatistica">
+              <span class="numero" id="totalPessoas"> 0 </span>
+
+              <span class="descricao"> Pessoas </span>
+            </div>
+
+            <div class="estatistica">
+              <span class="numero" id="totalTitulares"> 0 </span>
+
+              <span class="descricao"> Titulares </span>
+            </div>
+
+            <div class="estatistica">
+              <span class="numero" id="totalAcompanhantes"> 0 </span>
+
+              <span class="descricao"> Acompanhantes </span>
+            </div>
+          </div>
+
+          <!-- =================================
+                     BUSCA
+                ================================== -->
+
+          <div class="campo busca">
+            <label for="busca"> Consultar convidado </label>
+
+            <input type="search" id="busca" placeholder="Digite o nome..." />
+          </div>
+
+          <!-- =================================
+                     STATUS
+                ================================== -->
+
+          <div class="barra-acoes">
+            <span id="resultado"> Carregando... </span>
+
+            <button type="button" id="btnAtualizar" class="btn-atualizar">
+              ↻ Atualizar
+            </button>
+          </div>
+
+          <!-- =================================
+                     LISTA
+                ================================== -->
+
+          <div id="lista" class="lista"></div>
+
+          <!-- =================================
+                     CARREGANDO
+                ================================== -->
+
+          <div id="carregando" class="carregando">
+            <div class="spinner"></div>
+
+            <span> Carregando confirmações... </span>
+          </div>
+
+          <!-- =================================
+                     SAIR
+                ================================== -->
+
+          <button type="button" id="btnSair" class="btn-sair">Sair</button>
+        </div>
+
+        <!-- =====================================
+                 RODAPÉ
+            ====================================== -->
+
+        <footer>Painel administrativo</footer>
+      </section>
+    </main>
 
     <script src="script.js"></script>
   </body>

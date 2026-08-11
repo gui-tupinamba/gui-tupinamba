@@ -1,79 +1,573 @@
-body {
-  font-family: Arial;
+* {
+  box-sizing: border-box;
 
-  background: #f4f4f4;
+  margin: 0;
+
+  padding: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+
+  background: #33441a;
+
+  color: #1f2937;
+
+  min-height: 100vh;
+}
+
+/* =========================================
+   PÁGINA
+========================================= */
+
+.pagina {
+  width: 100%;
+
+  min-height: 100vh;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
 
   padding: 20px;
 }
 
-.container {
-  max-width: 800px;
-
-  margin: auto;
-}
+/* =========================================
+   CARD
+========================================= */
 
 .card {
-  background: white;
+  width: 100%;
 
-  border-radius: 15px;
+  max-width: 650px;
 
-  padding: 30px;
+  background: #fff6d6;
+
+  border-radius: 18px;
+
+  padding: 32px;
+
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.08);
+}
+
+/* =========================================
+   CABEÇALHO
+========================================= */
+
+.cabecalho {
+  text-align: center;
+
+  margin-bottom: 30px;
+}
+
+.icone-evento {
+  width: 100px;
+
+  height: 100px;
+
+  margin: 0 auto 15px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 50%;
+
+  font-size: 42px;
+}
+
+.cabecalho h1 {
+  font-size: 26px;
+
+  margin-bottom: 8px;
+
+  color: #111827;
+}
+
+.cabecalho p {
+  color: #6b7280;
+
+  font-size: 15px;
+
+  line-height: 1.5;
+}
+
+/* =========================================
+   CAMPOS
+========================================= */
+
+.campo {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+
+  font-size: 15px;
+
+  font-weight: 600;
+
+  margin-bottom: 8px;
+
+  color: #374151;
 }
 
 input {
   width: 100%;
 
-  height: 45px;
+  height: 50px;
 
-  margin-bottom: 10px;
+  padding: 0 14px;
 
-  padding: 10px;
+  border: 1px solid #d1d5db;
 
-  border: 1px solid #ccc;
+  border-radius: 9px;
 
-  border-radius: 8px;
+  outline: none;
+
+  font-size: 16px;
+
+  color: #111827;
+
+  background: #ffffff;
+
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
 }
 
-button {
-  height: 45px;
+input:focus {
+  border-color: #33441a;
 
-  padding: 0 20px;
+  box-shadow: 0 0 0 3px rgba(51, 68, 26, 0.12);
+}
+
+input::placeholder {
+  color: #9ca3af;
+}
+
+/* =========================================
+   BOTÃO CONFIRMAR / ENTRAR
+========================================= */
+
+.btn-confirmar {
+  width: 100%;
+
+  height: 54px;
+
+  margin-top: 5px;
+
+  border: none;
+
+  border-radius: 9px;
+
+  background: #33441a;
+
+  color: #ffffff;
+
+  font-size: 16px;
+
+  font-weight: bold;
+
+  cursor: pointer;
+}
+
+.btn-confirmar:hover {
+  opacity: 0.9;
+}
+
+.btn-confirmar:disabled {
+  opacity: 0.5;
+
+  cursor: not-allowed;
+}
+
+/* =========================================
+   ESTATÍSTICAS
+========================================= */
+
+.estatisticas {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 10px;
+
+  margin-bottom: 25px;
+}
+
+.estatistica {
+  background: #ffffff;
+
+  border: 1px solid #eee6c9;
+
+  border-radius: 12px;
+
+  padding: 15px 10px;
+
+  text-align: center;
+}
+
+.numero {
+  display: block;
+
+  font-size: 25px;
+
+  font-weight: bold;
+
+  color: #33441a;
+
+  margin-bottom: 4px;
+}
+
+.descricao {
+  display: block;
+
+  font-size: 12px;
+
+  color: #6b7280;
+}
+
+/* =========================================
+   BUSCA
+========================================= */
+
+.busca {
+  margin-bottom: 15px;
+}
+
+.busca input {
+  height: 52px;
+}
+
+/* =========================================
+   BARRA DE AÇÕES
+========================================= */
+
+.barra-acoes {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 10px;
+
+  margin-bottom: 15px;
+}
+
+#resultado {
+  color: #6b7280;
+
+  font-size: 13px;
+}
+
+.btn-atualizar {
+  height: 38px;
+
+  padding: 0 14px;
 
   border: none;
 
   border-radius: 8px;
 
-  background: black;
+  background: #33441a;
 
-  color: white;
+  color: #ffffff;
+
+  font-size: 13px;
+
+  font-weight: bold;
 
   cursor: pointer;
 }
 
-.topo {
+.btn-atualizar:hover {
+  opacity: 0.9;
+}
+
+/* =========================================
+   LISTA
+========================================= */
+
+.lista {
   display: flex;
+
+  flex-direction: column;
+
+  gap: 10px;
+
+  max-height: 500px;
+
+  overflow-y: auto;
+
+  padding-right: 3px;
+}
+
+/* =========================================
+   GRUPO DE CONVIDADO
+========================================= */
+
+.grupo-convidado {
+  background: #ffffff;
+
+  border: 1px solid #eee6c9;
+
+  border-radius: 12px;
+
+  overflow: hidden;
+}
+
+/* =========================================
+   TITULAR
+========================================= */
+
+.titular {
+  padding: 15px;
+
+  display: flex;
+
+  align-items: center;
 
   justify-content: space-between;
 
-  margin-bottom: 15px;
+  gap: 10px;
 }
 
-.pessoa {
-  border: 1px solid #eee;
+.nome-titular {
+  font-size: 16px;
 
-  border-radius: 10px;
-
-  padding: 15px;
-
-  margin-bottom: 10px;
-}
-
-.titular {
   font-weight: bold;
+
+  color: #111827;
+}
+
+.tag-titular {
+  background: #33441a;
+
+  color: #ffffff;
+
+  padding: 5px 9px;
+
+  border-radius: 20px;
+
+  font-size: 11px;
+
+  font-weight: bold;
+
+  white-space: nowrap;
+}
+
+/* =========================================
+   ACOMPANHANTES
+========================================= */
+
+.lista-do-titular {
+  border-top: 1px solid #f0ead3;
+
+  padding: 8px 15px 12px;
 }
 
 .acompanhante {
-  color: #666;
+  display: flex;
 
-  margin-left: 20px;
+  align-items: center;
+
+  gap: 8px;
+
+  padding: 7px 0;
+
+  color: #6b7280;
+
+  font-size: 14px;
+}
+
+.icone-acompanhante {
+  color: #33441a;
+
+  font-weight: bold;
+}
+
+/* =========================================
+   SEM RESULTADO
+========================================= */
+
+.sem-resultado {
+  text-align: center;
+
+  padding: 30px 15px;
+
+  color: #6b7280;
+
+  font-size: 14px;
+}
+
+/* =========================================
+   CARREGANDO
+========================================= */
+
+.carregando {
+  display: none;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 10px;
+
+  padding: 20px;
+
+  color: #6b7280;
+
+  font-size: 14px;
+}
+
+.spinner {
+  width: 18px;
+
+  height: 18px;
+
+  border: 2px solid #e5e7eb;
+
+  border-top-color: #33441a;
+
+  border-radius: 50%;
+
+  animation: girar 0.8s linear infinite;
+}
+
+@keyframes girar {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* =========================================
+   MENSAGEM
+========================================= */
+
+.mensagem {
+  display: none;
+
+  margin-top: 15px;
+
+  padding: 15px;
+
+  border-radius: 9px;
+
+  text-align: center;
+
+  font-size: 14px;
+
+  line-height: 1.5;
+}
+
+.mensagem.erro {
+  display: block;
+
+  background: #fee2e2;
+
+  color: #991b1b;
+}
+
+/* =========================================
+   SAIR
+========================================= */
+
+.btn-sair {
+  width: 100%;
+
+  height: 45px;
+
+  margin-top: 20px;
+
+  border: 1px solid #d1d5db;
+
+  border-radius: 9px;
+
+  background: transparent;
+
+  color: #6b7280;
+
+  font-size: 14px;
+
+  cursor: pointer;
+}
+
+.btn-sair:hover {
+  background: #ffffff;
+}
+
+/* =========================================
+   RODAPÉ
+========================================= */
+
+footer {
+  text-align: center;
+
+  margin-top: 25px;
+
+  padding-top: 20px;
+
+  border-top: 1px solid #eee6c9;
+
+  color: #9ca3af;
+
+  font-size: 12px;
+}
+
+/* =========================================
+   CELULAR
+========================================= */
+
+@media (max-width: 480px) {
+  .pagina {
+    padding: 10px;
+
+    align-items: flex-start;
+  }
+
+  .card {
+    margin-top: 10px;
+
+    padding: 24px 20px;
+
+    border-radius: 14px;
+  }
+
+  .cabecalho h1 {
+    font-size: 23px;
+  }
+
+  .estatisticas {
+    gap: 6px;
+  }
+
+  .estatistica {
+    padding: 12px 5px;
+  }
+
+  .numero {
+    font-size: 21px;
+  }
+
+  .descricao {
+    font-size: 11px;
+  }
+
+  .titular {
+    align-items: flex-start;
+  }
+
+  .nome-titular {
+    font-size: 15px;
+  }
+
+  .tag-titular {
+    font-size: 10px;
+  }
 }
