@@ -1,7 +1,7 @@
 const API_URL =
   "https://script.google.com/macros/s/AKfycbzU2vLvja5lhtW8ExWfnTgdF1kluwgrNYsAxauT3k-bHfDEm4XxB_G4S9sK-7UdNxHkbQ/exec";
 
-const MAX_ACOMPANHANTES = 10;
+const MAX_ACOMPANHANTES = 3;
 
 /*
 =====================================================
