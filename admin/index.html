@@ -5,33 +5,43 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Administração - Confirmações</title>
+    <meta name="description" content="Painel administrativo de confirmações" />
+
+    <title>Confirmações</title>
 
     <link rel="stylesheet" href="style.css" />
   </head>
 
   <body>
-    <main class="pagina">
-      <section class="card">
-        <!-- =====================================
-                 CABEÇALHO
-            ====================================== -->
-
-        <header class="cabecalho">
-          <div class="icone-evento">💍</div>
-
-          <h1>Confirmações</h1>
-
-          <p>Painel de administração</p>
-        </header>
-
+    <div class="pagina">
+      <div class="card">
         <!-- =====================================
                  LOGIN
             ====================================== -->
 
-        <div id="login" class="login">
+        <section id="login" class="tela-login">
+          <header class="cabecalho">
+            <div class="icone-evento">💍</div>
+
+            <h1>Confirmações</h1>
+
+            <p>Painel de administração</p>
+          </header>
+
           <div class="campo">
-            <label for="senha"> Senha de acesso </label>
+            <label for="usuario"> Usuário </label>
+
+            <input
+              type="text"
+              id="usuario"
+              placeholder="Digite o usuário"
+              autocomplete="username"
+              spellcheck="false"
+            />
+          </div>
+
+          <div class="campo">
+            <label for="senha"> Senha </label>
 
             <input
               type="password"
@@ -46,64 +56,77 @@
           </button>
 
           <div id="erroLogin" class="mensagem erro"></div>
-        </div>
+
+          <footer>
+            <a href="../mywedding/" class="link-voltar">
+              Voltar para confirmação
+            </a>
+          </footer>
+        </section>
 
         <!-- =====================================
                  PAINEL
             ====================================== -->
 
-        <div id="painel" class="painel" style="display: none">
+        <section id="painel" class="painel" style="display: none">
+          <header class="cabecalho">
+            <div class="icone-evento">💍</div>
+
+            <h1>Confirmações</h1>
+
+            <p>Painel de administração</p>
+          </header>
+
           <!-- =================================
                      ESTATÍSTICAS
                 ================================== -->
 
           <div class="estatisticas">
             <div class="estatistica">
-              <span class="numero" id="totalPessoas"> 0 </span>
+              <strong id="totalPessoas"> 0 </strong>
 
-              <span class="descricao"> Pessoas </span>
+              <span> Pessoas </span>
             </div>
 
             <div class="estatistica">
-              <span class="numero" id="totalTitulares"> 0 </span>
+              <strong id="totalTitulares"> 0 </strong>
 
-              <span class="descricao"> Titulares </span>
+              <span> Titulares </span>
             </div>
 
             <div class="estatistica">
-              <span class="numero" id="totalAcompanhantes"> 0 </span>
+              <strong id="totalAcompanhantes"> 0 </strong>
 
-              <span class="descricao"> Acompanhantes </span>
+              <span> Acompanhantes </span>
             </div>
           </div>
 
           <!-- =================================
-                     BUSCA
+                     CONSULTA
                 ================================== -->
 
-          <div class="campo busca">
-            <label for="busca"> Consultar convidado </label>
+          <div class="consulta">
+            <div class="titulo-consulta">
+              <label for="busca"> Consultar convidado </label>
+            </div>
 
-            <input type="search" id="busca" placeholder="Digite o nome..." />
+            <input
+              type="text"
+              id="busca"
+              placeholder="Digite o nome..."
+              autocomplete="off"
+            />
+
+            <div class="barra-acoes">
+              <span id="resultado" class="contador-resultados">
+                0 convites
+              </span>
+
+              <button type="button" id="btnAtualizar" class="btn-atualizar">
+                ↻ Atualizar
+              </button>
+            </div>
           </div>
-
-          <!-- =================================
-                     STATUS
-                ================================== -->
-
-          <div class="barra-acoes">
-            <span id="resultado"> Carregando... </span>
-
-            <button type="button" id="btnAtualizar" class="btn-atualizar">
-              ↻ Atualizar
-            </button>
-          </div>
-
-          <!-- =================================
-                     LISTA
-                ================================== -->
-
-          <div id="lista" class="lista"></div>
 
           <!-- =================================
                      CARREGANDO
@@ -112,23 +135,27 @@
           <div id="carregando" class="carregando">
             <div class="spinner"></div>
 
-            <span> Carregando confirmações... </span>
+            <span> Carregando... </span>
           </div>
+
+          <!-- =================================
+                     LISTA
+                ================================== -->
+
+          <div id="lista" class="lista-convidados"></div>
 
           <!-- =================================
                      SAIR
                 ================================== -->
 
           <button type="button" id="btnSair" class="btn-sair">Sair</button>
-        </div>
 
-        <!-- =====================================
-                 RODAPÉ
-            ====================================== -->
-
-        <footer>Painel administrativo</footer>
-      </section>
-    </main>
+          <footer>
+            <span> Painel administrativo </span>
+          </footer>
+        </section>
+      </div>
+    </div>
 
     <script src="script.js"></script>
   </body>

@@ -1,15 +1,23 @@
+/* =========================================
+   CONFIGURAÇÃO
+========================================= */
+
+/*
+URL DO SEU GOOGLE APPS SCRIPT
+*/
+
 const API =
   "https://script.google.com/macros/s/AKfycbzU2vLvja5lhtW8ExWfnTgdF1kluwgrNYsAxauT3k-bHfDEm4XxB_G4S9sK-7UdNxHkbQ/exec";
 
-/*
-=====================================================
-ELEMENTOS
-=====================================================
-*/
+/* =========================================
+   ELEMENTOS
+========================================= */
 
 const login = document.getElementById("login");
 
 const painel = document.getElementById("painel");
+
+const usuario = document.getElementById("usuario");
 
 const senha = document.getElementById("senha");
 
@@ -35,23 +43,33 @@ const totalTitulares = document.getElementById("totalTitulares");
 
 const totalAcompanhantes = document.getElementById("totalAcompanhantes");
 
-/*
-=====================================================
-DADOS
-=====================================================
-*/
+/* =========================================
+   ESTADO
+========================================= */
 
 let convidados = [];
 
-let senhaAtual = "";
-
 /*
-=====================================================
-LOGIN
-=====================================================
+Credenciais ficam somente
+na memória enquanto o painel
+estiver aberto.
 */
 
+let usuarioAtual = "";
+
+let senhaAtual = "";
+
+/* =========================================
+   LOGIN
+========================================= */
+
 btnEntrar.addEventListener("click", entrar);
+
+usuario.addEventListener("keydown", function (event) {
+  if (event.key === "Enter") {
+    entrar();
+  }
+});
 
 senha.addEventListener("keydown", function (event) {
   if (event.key === "Enter") {
@@ -59,29 +77,82 @@ senha.addEventListener("keydown", function (event) {
   }
 });
 
-async function entrar() {
-  const valor = senha.value.trim();
+/* =========================================
+   ENTRAR
+========================================= */
 
-  if (!valor) {
-    mostrarErro("Digite a senha para continuar.");
+async function entrar() {
+  const usuarioValor = usuario.value.trim();
+
+  const senhaValor = senha.value;
+
+  esconderErro();
+
+  if (!usuarioValor) {
+    mostrarErro("Digite o usuário.");
+
+    usuario.focus();
 
     return;
   }
 
-  senhaAtual = valor;
+  if (!senhaValor) {
+    mostrarErro("Digite a senha.");
+
+    senha.focus();
+
+    return;
+  }
 
   btnEntrar.disabled = true;
 
   btnEntrar.innerText = "Entrando...";
 
-  esconderErro();
-
   try {
+    const url =
+      API +
+      "?acao=login" +
+      "&usuario=" +
+      encodeURIComponent(usuarioValor) +
+      "&senha=" +
+      encodeURIComponent(senhaValor);
+
+    const resposta = await fetch(url);
+
+    if (!resposta.ok) {
+      throw new Error("Não foi possível conectar ao servidor.");
+    }
+
+    const dados = await resposta.json();
+
+    if (!dados.sucesso) {
+      throw new Error(dados.mensagem || "Usuário ou senha inválidos.");
+    }
+
+    /*
+        Guarda as credenciais
+        somente na memória.
+        */
+
+    usuarioAtual = usuarioValor;
+
+    senhaAtual = senhaValor;
+
+    /*
+        Carrega os convidados
+        */
+
     await carregarDados();
+
+    /*
+        Mostra painel
+        */
 
     login.style.display = "none";
 
     painel.style.display = "block";
+
+    busca.focus();
   } catch (erro) {
     mostrarErro(erro.message);
   } finally {
@@ -91,49 +162,53 @@ async function entrar() {
   }
 }
 
-/*
-=====================================================
-CARREGAR DADOS
-=====================================================
-*/
+/* =========================================
+   CARREGAR DADOS
+========================================= */
 
 async function carregarDados() {
   mostrarCarregando();
 
-  const url = API + "?acao=listar&senha=" + encodeURIComponent(senhaAtual);
-
   try {
+    const url =
+      API +
+      "?acao=listar" +
+      "&usuario=" +
+      encodeURIComponent(usuarioAtual) +
+      "&senha=" +
+      encodeURIComponent(senhaAtual);
+
     const resposta = await fetch(url);
 
     if (!resposta.ok) {
-      throw new Error("Não foi possível acessar o servidor.");
+      throw new Error("Erro ao consultar os convidados.");
     }
 
     const dados = await resposta.json();
 
-    console.log("Dados recebidos:", dados);
+    console.log("Resposta da API:", dados);
 
     if (!dados.sucesso) {
-      throw new Error(dados.mensagem || "Senha inválida.");
+      throw new Error(
+        dados.mensagem || "Não foi possível carregar os convidados.",
+      );
     }
 
     convidados = Array.isArray(dados.dados) ? dados.dados : [];
 
-    console.log("Convidados:", convidados);
-
     atualizarEstatisticas();
 
     renderizar();
+  } catch (erro) {
+    throw erro;
   } finally {
     esconderCarregando();
   }
 }
 
-/*
-=====================================================
-ATUALIZAR
-=====================================================
-*/
+/* =========================================
+   ATUALIZAR
+========================================= */
 
 btnAtualizar.addEventListener("click", async function () {
   btnAtualizar.disabled = true;
@@ -144,34 +219,42 @@ btnAtualizar.addEventListener("click", async function () {
     await carregarDados();
   } catch (erro) {
     alert(erro.message);
+  } finally {
+    btnAtualizar.disabled = false;
+
+    btnAtualizar.innerText = "↻ Atualizar";
   }
-
-  btnAtualizar.disabled = false;
-
-  btnAtualizar.innerText = "↻ Atualizar";
 });
 
-/*
-=====================================================
-BUSCA
-=====================================================
-*/
+/* =========================================
+   PESQUISA
+========================================= */
 
 busca.addEventListener("input", function () {
   renderizar();
 });
 
-/*
-=====================================================
-IDENTIFICA TIPO
-=====================================================
-*/
+/* =========================================
+   NORMALIZAR TEXTO
+========================================= */
+
+function normalizar(texto) {
+  return String(texto || "")
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .trim();
+}
+
+/* =========================================
+   TITULAR
+========================================= */
 
 function ehTitular(pessoa) {
   const tipo = normalizar(pessoa.tipo);
 
   /*
-    Aceita várias formas
+    Formas aceitas
     */
 
   if (
@@ -184,12 +267,8 @@ function ehTitular(pessoa) {
   }
 
   /*
-    Se não tiver tipo,
-    verifica o responsável.
-
     Se o responsável for
-    a própria pessoa,
-    ela é titular.
+    o próprio nome.
     */
 
   const nome = normalizar(pessoa.nome);
@@ -201,8 +280,8 @@ function ehTitular(pessoa) {
   }
 
   /*
-    Se não houver responsável,
-    também consideramos titular.
+    Sem responsável =
+    titular.
     */
 
   if (!responsavel) {
@@ -212,21 +291,17 @@ function ehTitular(pessoa) {
   return false;
 }
 
-/*
-=====================================================
-IDENTIFICA ACOMPANHANTE
-=====================================================
-*/
+/* =========================================
+   ACOMPANHANTE
+========================================= */
 
 function ehAcompanhante(pessoa) {
   return !ehTitular(pessoa);
 }
 
-/*
-=====================================================
-ESTATÍSTICAS
-=====================================================
-*/
+/* =========================================
+   ESTATÍSTICAS
+========================================= */
 
 function atualizarEstatisticas() {
   let titulares = 0;
@@ -248,18 +323,16 @@ function atualizarEstatisticas() {
   totalAcompanhantes.innerText = acompanhantes;
 }
 
-/*
-=====================================================
-AGRUPAR
-=====================================================
-*/
+/* =========================================
+   AGRUPAR CONVIDADOS
+========================================= */
 
 function agruparConvidados(dados) {
   const grupos = [];
 
   /*
     PRIMEIRO:
-    cria os titulares
+    titulares
     */
 
   dados.forEach(function (pessoa) {
@@ -274,7 +347,7 @@ function agruparConvidados(dados) {
 
   /*
     SEGUNDO:
-    coloca acompanhantes
+    acompanhantes
     */
 
   dados.forEach(function (pessoa) {
@@ -284,10 +357,6 @@ function agruparConvidados(dados) {
 
     const responsavel = normalizar(pessoa.responsavel);
 
-    /*
-            Procura o titular
-            */
-
     const grupo = grupos.find(function (grupo) {
       return normalizar(grupo.titular.nome) === responsavel;
     });
@@ -296,9 +365,9 @@ function agruparConvidados(dados) {
       grupo.acompanhantes.push(pessoa);
     } else {
       /*
-                Se não encontrou o titular,
-                cria um grupo próprio para
-                não perder a pessoa.
+                Caso exista algum
+                registro antigo
+                inconsistente.
                 */
 
       grupos.push({
@@ -308,6 +377,8 @@ function agruparConvidados(dados) {
           tipo: "Titular",
 
           responsavel: pessoa.responsavel || pessoa.nome,
+
+          id: pessoa.id,
         },
 
         acompanhantes: pessoa.responsavel ? [pessoa] : [],
@@ -318,11 +389,9 @@ function agruparConvidados(dados) {
   return grupos;
 }
 
-/*
-=====================================================
-RENDERIZAR
-=====================================================
-*/
+/* =========================================
+   RENDERIZAR
+========================================= */
 
 function renderizar() {
   lista.innerHTML = "";
@@ -330,6 +399,8 @@ function renderizar() {
   const termo = normalizar(busca.value);
 
   if (convidados.length === 0) {
+    resultado.innerText = "0 convites";
+
     lista.innerHTML = `
 
             <div class="sem-resultado">
@@ -339,8 +410,6 @@ function renderizar() {
             </div>
 
         `;
-
-    resultado.innerText = "0 convites";
 
     return;
   }
@@ -353,17 +422,11 @@ function renderizar() {
 
   if (termo) {
     grupos = grupos.filter(function (grupo) {
-      /*
-                    Procura no titular
-                    */
+      const nomeTitular = normalizar(grupo.titular.nome);
 
-      if (normalizar(grupo.titular.nome).includes(termo)) {
+      if (nomeTitular.includes(termo)) {
         return true;
       }
-
-      /*
-                    Procura nos acompanhantes
-                    */
 
       return grupo.acompanhantes.some(function (acompanhante) {
         return normalizar(acompanhante.nome).includes(termo);
@@ -401,17 +464,39 @@ function renderizar() {
 
                 <div class="titular">
 
-                    <span class="nome-titular">
+                    <div class="dados-titular">
 
-                        ${escaparHTML(grupo.titular.nome)}
+                        <span
+                            class="nome-titular"
+                        >
 
-                    </span>
+                            ${escaparHTML(grupo.titular.nome)}
 
-                    <span class="tag-titular">
+                        </span>
 
-                        TITULAR
 
-                    </span>
+                        <span
+                            class="tag-titular"
+                        >
+
+                            TITULAR
+
+                        </span>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        class="btn-excluir"
+                        data-id="${escaparAtributo(grupo.titular.id)}"
+                        data-nome="${escaparAtributo(grupo.titular.nome)}"
+                        title="Excluir convidado"
+                    >
+
+                        🗑️
+
+                    </button>
 
                 </div>
 
@@ -443,11 +528,31 @@ function renderizar() {
                                         ↳
                                     </span>
 
-                                    <span>
+
+                                    <span
+                                        class="nome-acompanhante"
+                                    >
 
                                         ${escaparHTML(acompanhante.nome)}
 
                                     </span>
+
+
+                                    <button
+                                        type="button"
+                                        class="btn-excluir"
+                                        data-id="${escaparAtributo(
+                                          acompanhante.id,
+                                        )}"
+                                        data-nome="${escaparAtributo(
+                                          acompanhante.nome,
+                                        )}"
+                                        title="Excluir acompanhante"
+                                    >
+
+                                        🗑️
+
+                                    </button>
 
                                 </div>
 
@@ -465,27 +570,100 @@ function renderizar() {
 
     lista.appendChild(div);
   });
+
+  ativarBotoesExcluir();
 }
 
-/*
-=====================================================
-NORMALIZAR
-=====================================================
-*/
+/* =========================================
+   ATIVAR BOTÕES DE EXCLUSÃO
+========================================= */
 
-function normalizar(texto) {
-  return String(texto || "")
-    .toLowerCase()
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
-    .trim();
+function ativarBotoesExcluir() {
+  const botoes = document.querySelectorAll(".btn-excluir");
+
+  botoes.forEach(function (botao) {
+    botao.addEventListener("click", function () {
+      const id = botao.dataset.id;
+
+      const nome = botao.dataset.nome;
+
+      excluirConvidado(id, nome, botao);
+    });
+  });
 }
 
-/*
-=====================================================
-SEGURANÇA HTML
-=====================================================
-*/
+/* =========================================
+   EXCLUIR CONVIDADO
+========================================= */
+
+async function excluirConvidado(id, nome, botao) {
+  if (!id) {
+    alert("Este convidado não possui um ID válido.");
+
+    return;
+  }
+
+  const confirmou = confirm(
+    `Deseja realmente excluir "${nome}"?\n\n` +
+      `Somente esta pessoa será excluída.`,
+  );
+
+  if (!confirmou) {
+    return;
+  }
+
+  /*
+    Desabilita o botão
+    */
+
+  botao.disabled = true;
+
+  botao.innerText = "…";
+
+  try {
+    const dados = new URLSearchParams();
+
+    dados.append("acao", "excluir");
+
+    dados.append("id", id);
+
+    dados.append("usuario", usuarioAtual);
+
+    dados.append("senha", senhaAtual);
+
+    const resposta = await fetch(API, {
+      method: "POST",
+
+      body: dados,
+    });
+
+    if (!resposta.ok) {
+      throw new Error("Não foi possível excluir o convidado.");
+    }
+
+    const retorno = await resposta.json();
+
+    if (!retorno.sucesso) {
+      throw new Error(retorno.mensagem || "Erro ao excluir.");
+    }
+
+    /*
+        Atualiza os dados
+        */
+
+    await carregarDados();
+  } catch (erro) {
+    alert(erro.message);
+
+    botao.disabled = false;
+
+    botao.innerText = "🗑️";
+  }
+}
+
+/* =========================================
+   ESCAPAR HTML
+========================================= */
 
 function escaparHTML(texto) {
   return String(texto || "")
@@ -496,11 +674,17 @@ function escaparHTML(texto) {
     .replace(/'/g, "&#039;");
 }
 
-/*
-=====================================================
-CARREGAMENTO
-=====================================================
-*/
+/* =========================================
+   ESCAPAR ATRIBUTO
+========================================= */
+
+function escaparAtributo(texto) {
+  return escaparHTML(texto);
+}
+
+/* =========================================
+   LOADING
+========================================= */
 
 function mostrarCarregando() {
   carregando.style.display = "flex";
@@ -510,14 +694,12 @@ function esconderCarregando() {
   carregando.style.display = "none";
 }
 
-/*
-=====================================================
-ERRO
-=====================================================
-*/
+/* =========================================
+   ERROS
+========================================= */
 
-function mostrarErro(texto) {
-  erroLogin.innerText = texto;
+function mostrarErro(mensagem) {
+  erroLogin.innerText = mensagem;
 
   erroLogin.style.display = "block";
 }
@@ -528,26 +710,36 @@ function esconderErro() {
   erroLogin.style.display = "none";
 }
 
-/*
-=====================================================
-SAIR
-=====================================================
-*/
+/* =========================================
+   SAIR
+========================================= */
 
 btnSair.addEventListener("click", function () {
-  convidados = [];
+  /*
+        Limpa credenciais
+        */
+
+  usuarioAtual = "";
 
   senhaAtual = "";
 
-  lista.innerHTML = "";
+  convidados = [];
 
-  busca.value = "";
+  /*
+        Limpa formulário
+        */
+
+  usuario.value = "";
 
   senha.value = "";
 
-  painel.style.display = "none";
+  busca.value = "";
 
-  login.style.display = "block";
+  /*
+        Limpa painel
+        */
+
+  lista.innerHTML = "";
 
   totalPessoas.innerText = "0";
 
@@ -555,5 +747,15 @@ btnSair.addEventListener("click", function () {
 
   totalAcompanhantes.innerText = "0";
 
-  resultado.innerText = "Aguardando acesso.";
+  resultado.innerText = "0 convites";
+
+  /*
+        Volta para login
+        */
+
+  painel.style.display = "none";
+
+  login.style.display = "block";
+
+  usuario.focus();
 });

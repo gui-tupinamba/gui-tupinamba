@@ -3,11 +3,9 @@ const API_URL =
 
 const MAX_ACOMPANHANTES = 3;
 
-/*
-=====================================================
-ELEMENTOS
-=====================================================
-*/
+/* =====================================================
+   ELEMENTOS
+===================================================== */
 
 const formulario = document.getElementById("formulario");
 
@@ -27,263 +25,460 @@ const contador = document.getElementById("contador");
 
 const iframeEnvio = document.getElementById("iframeEnvio");
 
-/*
-=====================================================
-CONTROLE
-=====================================================
-*/
+/* =====================================================
+   CONTROLE
+===================================================== */
 
 let quantidadeAcompanhantes = 0;
 
 let enviando = false;
 
-/*
-=====================================================
-CONFIGURA FORMULÁRIO
-=====================================================
-*/
+/* =====================================================
+   CONFIGURAÇÃO
+===================================================== */
 
-formulario.action = API_URL;
+if (formulario) {
+  formulario.action = API_URL;
+}
 
-/*
-=====================================================
-ADICIONAR ACOMPANHANTE
-=====================================================
-*/
+/* =====================================================
+   ADICIONAR ACOMPANHANTE
+===================================================== */
 
-btnAdicionar.addEventListener("click", function () {
-  if (quantidadeAcompanhantes >= MAX_ACOMPANHANTES) {
-    mostrarMensagem(
-      "O limite é de " + MAX_ACOMPANHANTES + " acompanhantes.",
-      "erro",
-    );
+if (btnAdicionar) {
+  btnAdicionar.addEventListener("click", function () {
+    if (quantidadeAcompanhantes >= MAX_ACOMPANHANTES) {
+      mostrarMensagem(
+        "O limite é de " + MAX_ACOMPANHANTES + " acompanhantes.",
+        "erro",
+      );
 
+      return;
+    }
+
+    quantidadeAcompanhantes++;
+
+    /* =========================================
+               CONTAINER
+            ========================================= */
+
+    const div = document.createElement("div");
+
+    div.className = "acompanhante";
+
+    /* =========================================
+               INPUT
+            ========================================= */
+
+    const input = document.createElement("input");
+
+    input.type = "text";
+
+    input.name = "acompanhantes";
+
+    input.className = "campo-acompanhante";
+
+    input.placeholder = "Nome completo do acompanhante";
+
+    input.autocomplete = "off";
+
+    /* =========================================
+               BOTÃO REMOVER
+            ========================================= */
+
+    const botao = document.createElement("button");
+
+    botao.type = "button";
+
+    botao.className = "btn-remover";
+
+    botao.innerHTML = "×";
+
+    botao.title = "Remover acompanhante";
+
+    /* =========================================
+               REMOVER
+            ========================================= */
+
+    botao.addEventListener("click", function () {
+      div.remove();
+
+      quantidadeAcompanhantes--;
+
+      atualizarContador();
+    });
+
+    /* =========================================
+               MONTA ELEMENTO
+            ========================================= */
+
+    div.appendChild(input);
+
+    div.appendChild(botao);
+
+    listaAcompanhantes.appendChild(div);
+
+    atualizarContador();
+
+    input.focus();
+  });
+}
+
+/* =====================================================
+   CONTADOR
+===================================================== */
+
+function atualizarContador() {
+  if (!contador) {
     return;
   }
 
-  quantidadeAcompanhantes++;
-
-  /*
-        Cria container
-        */
-
-  const div = document.createElement("div");
-
-  div.className = "acompanhante";
-
-  /*
-        Cria campo
-        */
-
-  const input = document.createElement("input");
-
-  input.type = "text";
-
-  input.name = "acompanhantes";
-
-  input.className = "campo-acompanhante";
-
-  input.placeholder = "Nome completo do acompanhante";
-
-  input.autocomplete = "off";
-
-  /*
-        Botão remover
-        */
-
-  const botao = document.createElement("button");
-
-  botao.type = "button";
-
-  botao.className = "btn-remover";
-
-  botao.innerHTML = "×";
-
-  botao.title = "Remover acompanhante";
-
-  /*
-        Remover acompanhante
-        */
-
-  botao.addEventListener("click", function () {
-    div.remove();
-
-    quantidadeAcompanhantes--;
-
-    atualizarContador();
-  });
-
-  div.appendChild(input);
-
-  div.appendChild(botao);
-
-  listaAcompanhantes.appendChild(div);
-
-  atualizarContador();
-
-  input.focus();
-});
-
-/*
-=====================================================
-CONTADOR
-=====================================================
-*/
-
-function atualizarContador() {
   contador.innerText = quantidadeAcompanhantes;
 }
 
-/*
-=====================================================
-ENVIO DO FORMULÁRIO
-=====================================================
-*/
+/* =====================================================
+   ENVIO DO FORMULÁRIO
+===================================================== */
 
-formulario.addEventListener("submit", function (event) {
-  event.preventDefault();
+if (formulario) {
+  formulario.addEventListener("submit", function (event) {
+    event.preventDefault();
 
-  if (enviando) {
-    return;
-  }
+    /* =========================================
+               EVITA DUPLO ENVIO
+            ========================================= */
 
-  /*
-        Nome
-        */
-
-  const nomeTitular = nome.value.trim();
-
-  if (!nomeTitular) {
-    mostrarMensagem("Digite seu nome.", "erro");
-
-    nome.focus();
-
-    return;
-  }
-
-  /*
-        Verifica acompanhantes vazios
-        */
-
-  const campos = document.querySelectorAll(".campo-acompanhante");
-
-  let acompanhanteVazio = false;
-
-  campos.forEach(function (campo) {
-    if (campo.value.trim() === "") {
-      acompanhanteVazio = true;
+    if (enviando) {
+      return;
     }
+
+    /* =========================================
+               NOME DO TITULAR
+            ========================================= */
+
+    const nomeTitular = nome.value.trim();
+
+    if (!nomeTitular) {
+      mostrarMensagem("Digite seu nome.", "erro");
+
+      nome.focus();
+
+      return;
+    }
+
+    /* =========================================
+               PEGA ACOMPANHANTES
+            ========================================= */
+
+    const campos = document.querySelectorAll(".campo-acompanhante");
+
+    const acompanhantes = [];
+
+    let acompanhanteVazio = false;
+
+    campos.forEach(function (campo) {
+      const valor = campo.value.trim();
+
+      if (!valor) {
+        acompanhanteVazio = true;
+      } else {
+        acompanhantes.push(valor);
+      }
+    });
+
+    /* =========================================
+               VERIFICA CAMPOS VAZIOS
+            ========================================= */
+
+    if (acompanhanteVazio) {
+      mostrarMensagem("Preencha ou remova todos os acompanhantes.", "erro");
+
+      return;
+    }
+
+    /* =========================================
+               LIMITE
+            ========================================= */
+
+    if (acompanhantes.length > MAX_ACOMPANHANTES) {
+      mostrarMensagem(
+        "O limite é de " + MAX_ACOMPANHANTES + " acompanhantes.",
+        "erro",
+      );
+
+      return;
+    }
+
+    /* =========================================
+               COMEÇA ENVIO
+            ========================================= */
+
+    enviando = true;
+
+    btnConfirmar.disabled = true;
+
+    btnAdicionar.disabled = true;
+
+    carregando.style.display = "flex";
+
+    esconderMensagem();
+
+    /* =========================================
+               CRIA FORMULÁRIO TEMPORÁRIO
+            ========================================= */
+
+    const formEnvio = document.createElement("form");
+
+    formEnvio.method = "POST";
+
+    formEnvio.action = API_URL;
+
+    formEnvio.target = "iframeEnvio";
+
+    /*
+             Importante:
+
+             O formulário original não é enviado.
+
+             Criamos outro formulário apenas
+             para enviar os dados para o Apps Script.
+            */
+
+    /* =========================================
+               AÇÃO
+            ========================================= */
+
+    adicionarCampoHidden(formEnvio, "acao", "confirmar");
+
+    /* =========================================
+               NOME DO TITULAR
+            ========================================= */
+
+    adicionarCampoHidden(formEnvio, "nome", nomeTitular);
+
+    /* =========================================
+               ACOMPANHANTES
+            ========================================= */
+
+    acompanhantes.forEach(function (acompanhante) {
+      adicionarCampoHidden(formEnvio, "acompanhantes", acompanhante);
+    });
+
+    /* =========================================
+               ADICIONA FORM AO BODY
+            ========================================= */
+
+    document.body.appendChild(formEnvio);
+
+    /* =========================================
+               DEBUG
+            ========================================= */
+
+    console.log("Enviando confirmação:");
+
+    console.log({
+      acao: "confirmar",
+
+      nome: nomeTitular,
+
+      acompanhantes: acompanhantes,
+    });
+
+    /* =========================================
+               ENVIA
+            ========================================= */
+
+    formEnvio.submit();
+
+    /* =========================================
+               REMOVE FORM TEMPORÁRIO
+            ========================================= */
+
+    setTimeout(function () {
+      if (formEnvio && formEnvio.parentNode) {
+        formEnvio.remove();
+      }
+    }, 1000);
+
+    /*
+             Não finalizamos imediatamente.
+
+             Esperamos o iframe carregar.
+            */
+
+    setTimeout(function () {
+      if (!enviando) {
+        return;
+      }
+
+      /*
+                     Caso o iframe não dispare
+                     corretamente, não deixa a
+                     tela presa infinitamente.
+                    */
+
+      finalizarEnvio();
+    }, 5000);
   });
+}
 
-  if (acompanhanteVazio) {
-    mostrarMensagem("Preencha ou remova todos os acompanhantes.", "erro");
+/* =====================================================
+   ADICIONAR CAMPO HIDDEN
+===================================================== */
 
-    return;
-  }
+function adicionarCampoHidden(formulario, nomeCampo, valor) {
+  const input = document.createElement("input");
 
-  /*
-        Começa envio
-        */
+  input.type = "hidden";
 
-  enviando = true;
+  input.name = nomeCampo;
 
-  btnConfirmar.disabled = true;
+  input.value = valor;
 
-  btnAdicionar.disabled = true;
+  formulario.appendChild(input);
+}
 
-  carregando.style.display = "flex";
+/* =====================================================
+   IFRAME
+===================================================== */
 
-  esconderMensagem();
+if (iframeEnvio) {
+  iframeEnvio.addEventListener("load", function () {
+    if (!enviando) {
+      return;
+    }
 
-  /*
-        Envia para o Google Apps Script
-        */
+    /*
+             O Google Apps Script pode levar
+             alguns milissegundos para concluir.
 
-  formulario.submit();
-});
+             Pequena espera antes de finalizar.
+            */
 
-/*
-=====================================================
-QUANDO O IFRAME TERMINAR DE CARREGAR
-=====================================================
-*/
+    setTimeout(function () {
+      if (enviando) {
+        finalizarEnvio();
+      }
+    }, 700);
+  });
+}
 
-iframeEnvio.addEventListener("load", function () {
-  /*
-        Ignora carregamentos que acontecerem
-        antes do envio.
-        */
+/* =====================================================
+   FINALIZAR ENVIO
+===================================================== */
 
+function finalizarEnvio() {
   if (!enviando) {
     return;
   }
 
-  /*
-        Dá um pequeno tempo para garantir
-        que o Apps Script terminou o processamento.
-        */
+  /* =========================================
+       PARA CARREGAMENTO
+    ========================================= */
 
-  setTimeout(function () {
-    finalizarEnvio();
-  }, 500);
-});
+  if (carregando) {
+    carregando.style.display = "none";
+  }
 
-/*
-=====================================================
-FINALIZA ENVIO
-=====================================================
-*/
-
-function finalizarEnvio() {
-  carregando.style.display = "none";
+  /* =========================================
+       MENSAGEM
+    ========================================= */
 
   mostrarMensagem("Presença confirmada com sucesso!", "sucesso");
 
-  /*
-    Limpa formulário
-    */
+  /* =========================================
+       LIMPA FORMULÁRIO
+    ========================================= */
 
-  formulario.reset();
+  if (formulario) {
+    formulario.reset();
+  }
 
-  listaAcompanhantes.innerHTML = "";
+  /* =========================================
+       REMOVE ACOMPANHANTES
+    ========================================= */
+
+  if (listaAcompanhantes) {
+    listaAcompanhantes.innerHTML = "";
+  }
 
   quantidadeAcompanhantes = 0;
 
   atualizarContador();
 
-  /*
-    Libera botões
-    */
+  /* =========================================
+       LIBERA BOTÕES
+    ========================================= */
 
-  btnConfirmar.disabled = false;
+  if (btnConfirmar) {
+    btnConfirmar.disabled = false;
+  }
 
-  btnAdicionar.disabled = false;
+  if (btnAdicionar) {
+    btnAdicionar.disabled = false;
+  }
 
   enviando = false;
 }
 
-/*
-=====================================================
-MENSAGENS
-=====================================================
-*/
+/* =====================================================
+   MENSAGEM
+===================================================== */
 
 function mostrarMensagem(texto, tipo) {
+  if (!mensagem) {
+    return;
+  }
+
   mensagem.innerText = texto;
 
   mensagem.className = "mensagem " + tipo;
+
+  mensagem.style.display = "block";
 }
 
+/* =====================================================
+   ESCONDER MENSAGEM
+===================================================== */
+
 function esconderMensagem() {
+  if (!mensagem) {
+    return;
+  }
+
   mensagem.innerText = "";
 
   mensagem.className = "mensagem";
+
+  mensagem.style.display = "none";
 }
 
-/*
-=====================================================
-INICIALIZAÇÃO
-=====================================================
-*/
+/* =====================================================
+   LINK PARA ADMIN
+===================================================== */
+
+function configurarLinkAdmin() {
+  /*
+     Procura um elemento com:
+
+     id="linkAdmin"
+
+     Caso exista, configura o endereço.
+    */
+
+  const linkAdmin = document.getElementById("linkAdmin");
+
+  if (!linkAdmin) {
+    return;
+  }
+
+  linkAdmin.href = "../admin/";
+}
+
+/* =====================================================
+   INICIALIZAÇÃO
+===================================================== */
 
 atualizarContador();
+
+configurarLinkAdmin();

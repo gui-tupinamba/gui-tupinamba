@@ -392,3 +392,28 @@ CELULAR
     font-size: 23px;
   }
 }
+
+/* =========================================
+   LINK ADMIN
+========================================= */
+
+.link-admin {
+    display: block;
+
+    margin-top: 18px;
+
+    text-align: center;
+
+    color: #9ca3af;
+
+    font-size: 11px;
+
+    text-decoration: none;
+}
+
+
+.link-admin:hover {
+    color: #374151;
+
+    text-decoration: underline;
+}

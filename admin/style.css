@@ -1,10 +1,16 @@
+/* =========================================
+   RESET
+========================================= */
+
 * {
   box-sizing: border-box;
-
   margin: 0;
-
   padding: 0;
 }
+
+/* =========================================
+   BODY
+========================================= */
 
 body {
   font-family: Arial, Helvetica, sans-serif;
@@ -41,7 +47,7 @@ body {
 .card {
   width: 100%;
 
-  max-width: 650px;
+  max-width: 500px;
 
   background: #fff6d6;
 
@@ -63,9 +69,9 @@ body {
 }
 
 .icone-evento {
-  width: 100px;
+  width: 150px;
 
-  height: 100px;
+  height: 150px;
 
   margin: 0 auto 15px;
 
@@ -77,7 +83,7 @@ body {
 
   border-radius: 50%;
 
-  font-size: 42px;
+  font-size: 50px;
 }
 
 .cabecalho h1 {
@@ -97,7 +103,7 @@ body {
 }
 
 /* =========================================
-   CAMPOS
+   CAMPO
 ========================================= */
 
 .campo {
@@ -143,15 +149,11 @@ input {
 input:focus {
   border-color: #33441a;
 
-  box-shadow: 0 0 0 3px rgba(51, 68, 26, 0.12);
-}
-
-input::placeholder {
-  color: #9ca3af;
+  box-shadow: 0 0 0 3px rgba(51, 68, 26, 0.1);
 }
 
 /* =========================================
-   BOTÃO CONFIRMAR / ENTRAR
+   BOTÃO ENTRAR
 ========================================= */
 
 .btn-confirmar {
@@ -159,13 +161,13 @@ input::placeholder {
 
   height: 54px;
 
-  margin-top: 5px;
+  margin-top: 8px;
 
   border: none;
 
   border-radius: 9px;
 
-  background: #33441a;
+  background: #111827;
 
   color: #ffffff;
 
@@ -174,10 +176,18 @@ input::placeholder {
   font-weight: bold;
 
   cursor: pointer;
+
+  transition:
+    opacity 0.2s,
+    transform 0.1s;
 }
 
 .btn-confirmar:hover {
   opacity: 0.9;
+}
+
+.btn-confirmar:active {
+  transform: scale(0.99);
 }
 
 .btn-confirmar:disabled {
@@ -187,267 +197,7 @@ input::placeholder {
 }
 
 /* =========================================
-   ESTATÍSTICAS
-========================================= */
-
-.estatisticas {
-  display: grid;
-
-  grid-template-columns: repeat(3, 1fr);
-
-  gap: 10px;
-
-  margin-bottom: 25px;
-}
-
-.estatistica {
-  background: #ffffff;
-
-  border: 1px solid #eee6c9;
-
-  border-radius: 12px;
-
-  padding: 15px 10px;
-
-  text-align: center;
-}
-
-.numero {
-  display: block;
-
-  font-size: 25px;
-
-  font-weight: bold;
-
-  color: #33441a;
-
-  margin-bottom: 4px;
-}
-
-.descricao {
-  display: block;
-
-  font-size: 12px;
-
-  color: #6b7280;
-}
-
-/* =========================================
-   BUSCA
-========================================= */
-
-.busca {
-  margin-bottom: 15px;
-}
-
-.busca input {
-  height: 52px;
-}
-
-/* =========================================
-   BARRA DE AÇÕES
-========================================= */
-
-.barra-acoes {
-  display: flex;
-
-  align-items: center;
-
-  justify-content: space-between;
-
-  gap: 10px;
-
-  margin-bottom: 15px;
-}
-
-#resultado {
-  color: #6b7280;
-
-  font-size: 13px;
-}
-
-.btn-atualizar {
-  height: 38px;
-
-  padding: 0 14px;
-
-  border: none;
-
-  border-radius: 8px;
-
-  background: #33441a;
-
-  color: #ffffff;
-
-  font-size: 13px;
-
-  font-weight: bold;
-
-  cursor: pointer;
-}
-
-.btn-atualizar:hover {
-  opacity: 0.9;
-}
-
-/* =========================================
-   LISTA
-========================================= */
-
-.lista {
-  display: flex;
-
-  flex-direction: column;
-
-  gap: 10px;
-
-  max-height: 500px;
-
-  overflow-y: auto;
-
-  padding-right: 3px;
-}
-
-/* =========================================
-   GRUPO DE CONVIDADO
-========================================= */
-
-.grupo-convidado {
-  background: #ffffff;
-
-  border: 1px solid #eee6c9;
-
-  border-radius: 12px;
-
-  overflow: hidden;
-}
-
-/* =========================================
-   TITULAR
-========================================= */
-
-.titular {
-  padding: 15px;
-
-  display: flex;
-
-  align-items: center;
-
-  justify-content: space-between;
-
-  gap: 10px;
-}
-
-.nome-titular {
-  font-size: 16px;
-
-  font-weight: bold;
-
-  color: #111827;
-}
-
-.tag-titular {
-  background: #33441a;
-
-  color: #ffffff;
-
-  padding: 5px 9px;
-
-  border-radius: 20px;
-
-  font-size: 11px;
-
-  font-weight: bold;
-
-  white-space: nowrap;
-}
-
-/* =========================================
-   ACOMPANHANTES
-========================================= */
-
-.lista-do-titular {
-  border-top: 1px solid #f0ead3;
-
-  padding: 8px 15px 12px;
-}
-
-.acompanhante {
-  display: flex;
-
-  align-items: center;
-
-  gap: 8px;
-
-  padding: 7px 0;
-
-  color: #6b7280;
-
-  font-size: 14px;
-}
-
-.icone-acompanhante {
-  color: #33441a;
-
-  font-weight: bold;
-}
-
-/* =========================================
-   SEM RESULTADO
-========================================= */
-
-.sem-resultado {
-  text-align: center;
-
-  padding: 30px 15px;
-
-  color: #6b7280;
-
-  font-size: 14px;
-}
-
-/* =========================================
-   CARREGANDO
-========================================= */
-
-.carregando {
-  display: none;
-
-  align-items: center;
-
-  justify-content: center;
-
-  gap: 10px;
-
-  padding: 20px;
-
-  color: #6b7280;
-
-  font-size: 14px;
-}
-
-.spinner {
-  width: 18px;
-
-  height: 18px;
-
-  border: 2px solid #e5e7eb;
-
-  border-top-color: #33441a;
-
-  border-radius: 50%;
-
-  animation: girar 0.8s linear infinite;
-}
-
-@keyframes girar {
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-/* =========================================
-   MENSAGEM
+   ERRO
 ========================================= */
 
 .mensagem {
@@ -475,15 +225,365 @@ input::placeholder {
 }
 
 /* =========================================
+   ESTATÍSTICAS
+========================================= */
+
+.estatisticas {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 6px;
+
+  margin-bottom: 24px;
+}
+
+.estatistica {
+  min-height: 62px;
+
+  border: 1px solid #e5e7eb;
+
+  border-radius: 10px;
+
+  background: #ffffff;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  text-align: center;
+}
+
+.estatistica strong {
+  font-size: 20px;
+
+  line-height: 1;
+
+  color: #111827;
+
+  margin-bottom: 6px;
+}
+
+.estatistica span {
+  font-size: 11px;
+
+  color: #6b7280;
+}
+
+/* =========================================
+   CONSULTA
+========================================= */
+
+.consulta {
+  margin-bottom: 20px;
+}
+
+.titulo-consulta {
+  margin-bottom: 8px;
+}
+
+.titulo-consulta label {
+  margin-bottom: 0;
+}
+
+.barra-acoes {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 10px;
+
+  margin-top: 12px;
+}
+
+.contador-resultados {
+  color: #374151;
+
+  font-size: 13px;
+}
+
+/* =========================================
+   ATUALIZAR
+========================================= */
+
+.btn-atualizar {
+  height: 38px;
+
+  padding: 0 14px;
+
+  border: none;
+
+  border-radius: 8px;
+
+  background: #4a5e28;
+
+  color: #ffffff;
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  white-space: nowrap;
+}
+
+.btn-atualizar:hover {
+  opacity: 0.9;
+}
+
+.btn-atualizar:disabled {
+  opacity: 0.5;
+
+  cursor: not-allowed;
+}
+
+/* =========================================
+   CARREGANDO
+========================================= */
+
+.carregando {
+  display: none;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 10px;
+
+  margin: 15px 0;
+
+  color: #6b7280;
+
+  font-size: 14px;
+}
+
+.spinner {
+  width: 18px;
+
+  height: 18px;
+
+  border: 2px solid #e5e7eb;
+
+  border-top-color: #111827;
+
+  border-radius: 50%;
+
+  animation: girar 0.8s linear infinite;
+}
+
+@keyframes girar {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* =========================================
+   LISTA
+========================================= */
+
+.lista-convidados {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 10px;
+}
+
+/* =========================================
+   GRUPO DO CONVIDADO
+========================================= */
+
+.grupo-convidado {
+  background: #ffffff;
+
+  border: 1px solid #e5e7eb;
+
+  border-radius: 10px;
+
+  overflow: hidden;
+}
+
+/* =========================================
+   TITULAR
+========================================= */
+
+.titular {
+  min-height: 54px;
+
+  padding: 10px 12px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 10px;
+}
+
+.dados-titular {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  min-width: 0;
+}
+
+.nome-titular {
+  font-size: 15px;
+
+  font-weight: 600;
+
+  color: #111827;
+
+  word-break: break-word;
+}
+
+/* =========================================
+   TAG TITULAR
+========================================= */
+
+.tag-titular {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 4px 7px;
+
+  border-radius: 20px;
+
+  background: #eef2e6;
+
+  color: #4a5e28;
+
+  font-size: 9px;
+
+  font-weight: bold;
+
+  white-space: nowrap;
+}
+
+/* =========================================
+   ACOMPANHANTES
+========================================= */
+
+.lista-do-titular {
+  border-top: 1px solid #f3f4f6;
+
+  padding: 5px 12px 8px 20px;
+}
+
+.acompanhante {
+  min-height: 40px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  color: #4b5563;
+
+  font-size: 14px;
+}
+
+.icone-acompanhante {
+  color: #9ca3af;
+
+  font-size: 16px;
+}
+
+.nome-acompanhante {
+  flex: 1;
+
+  min-width: 0;
+
+  word-break: break-word;
+}
+
+/* =========================================
+   BOTÃO EXCLUIR
+========================================= */
+
+.btn-excluir {
+  width: 32px;
+
+  height: 32px;
+
+  flex-shrink: 0;
+
+  border: none;
+
+  border-radius: 8px;
+
+  background: #fee2e2;
+
+  color: #dc2626;
+
+  cursor: pointer;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  font-size: 15px;
+
+  transition:
+    background 0.2s,
+    transform 0.1s;
+}
+
+.btn-excluir:hover {
+  background: #fecaca;
+}
+
+.btn-excluir:active {
+  transform: scale(0.92);
+}
+
+.btn-excluir:disabled {
+  opacity: 0.5;
+
+  cursor: not-allowed;
+}
+
+/* =========================================
+   SEM RESULTADO
+========================================= */
+
+.sem-resultado {
+  padding: 25px 10px;
+
+  text-align: center;
+
+  color: #6b7280;
+
+  font-size: 14px;
+}
+
+/* =========================================
    SAIR
 ========================================= */
 
 .btn-sair {
   width: 100%;
 
-  height: 45px;
+  height: 44px;
 
-  margin-top: 20px;
+  margin-top: 25px;
 
   border: 1px solid #d1d5db;
 
@@ -491,7 +591,7 @@ input::placeholder {
 
   background: transparent;
 
-  color: #6b7280;
+  color: #4b5563;
 
   font-size: 14px;
 
@@ -513,11 +613,23 @@ footer {
 
   padding-top: 20px;
 
-  border-top: 1px solid #eee6c9;
+  border-top: 1px solid #f3f4f6;
 
   color: #9ca3af;
 
   font-size: 12px;
+}
+
+.link-voltar {
+  color: #9ca3af;
+
+  text-decoration: none;
+}
+
+.link-voltar:hover {
+  color: #374151;
+
+  text-decoration: underline;
 }
 
 /* =========================================
@@ -543,31 +655,35 @@ footer {
     font-size: 23px;
   }
 
+  .icone-evento {
+    width: 120px;
+
+    height: 120px;
+
+    font-size: 42px;
+  }
+
   .estatisticas {
-    gap: 6px;
+    gap: 5px;
   }
 
   .estatistica {
-    padding: 12px 5px;
+    min-height: 60px;
   }
 
-  .numero {
-    font-size: 21px;
+  .estatistica strong {
+    font-size: 19px;
   }
 
-  .descricao {
-    font-size: 11px;
-  }
-
-  .titular {
-    align-items: flex-start;
-  }
-
-  .nome-titular {
-    font-size: 15px;
-  }
-
-  .tag-titular {
+  .estatistica span {
     font-size: 10px;
+  }
+
+  .dados-titular {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    gap: 4px;
   }
 }
